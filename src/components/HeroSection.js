@@ -136,7 +136,7 @@ const HeroSection = () => {
           <div className="w-full md:w-1/3 flex justify-center">
             <div className="relative w-full aspect-[3/4] max-w-md">
               <Image
-                src="/caregiver-with-elderly.jpg"
+                src="/images/hero-bg.jpg"
                 alt="Caregiver with elderly client"
                 fill
                 priority
@@ -164,7 +164,7 @@ const HeroSection = () => {
           {/* Image first on mobile */}
           <div className="relative w-full aspect-square max-w-xs mb-8">
             <Image
-              src="/caregiver-with-elderly.jpg"
+              src="/images/hero-bg.jpg"
               alt="Caregiver with elderly client"
               fill
               priority

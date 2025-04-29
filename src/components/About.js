@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
@@ -22,21 +24,21 @@ const About = () => {
   return (
     <section id="about" className="section bg-neutral-50 overflow-hidden">
       <div className="container-custom">
-        <div className={`text-center mb-12 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
+        <div className={`text-center mb-10 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           <span className="text-primary-500 font-semibold inline-block mb-2 px-4 py-1 bg-primary-50 rounded-full">About Us</span>
           <h2 className="heading-2 text-neutral-800 max-w-3xl mx-auto">Dedicated to Improving Lives Through Quality Care</h2>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           {/* Left Column */}
-          <div className={`space-y-8 order-2 lg:order-1 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: '0.3s'}}>
+          <div className={`space-y-6 order-2 lg:order-1 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: '0.3s'}}>
             <p className="text-neutral-600 text-lg leading-relaxed">
               Special Touch Home Care Group has been providing exceptional care services throughout New York for over 15 years. 
               Our dedicated team of caregivers is committed to enhancing the quality of life for our clients through personalized, 
               compassionate care that respects dignity and fosters independence.
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               <div className="flex items-start group bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
                 <div className="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -96,62 +98,50 @@ const About = () => {
           
           {/* Right Column - Image Gallery */}
           <div className={`relative order-1 lg:order-2 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: '0.6s'}}>
-            <div className="grid grid-cols-12 gap-3 md:gap-4">
+            <div className="grid grid-cols-12 gap-2">
               {/* First image - large top */}
-              <div className="col-span-12 md:col-span-7 h-56 sm:h-64 md:h-72 overflow-hidden rounded-2xl shadow-lg">
+              <div className="col-span-12 md:col-span-7 h-60 sm:h-72 md:h-80 relative overflow-hidden rounded-2xl shadow-lg">
                 <Image
                   src="/images/about-1.jpg"
                   alt="Special Touch homecare professional with client"
                   fill
-                  className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700"
-                  style={{ position: 'relative', height: '100%', width: '100%' }}
-                  width={600}
-                  height={400}
+                  className="object-cover object-center transform hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   quality={90}
                 />
               </div>
               
               {/* Second image - right column top */}
-              <div className="col-span-6 md:col-span-5 h-44 sm:h-52 md:h-60 overflow-hidden rounded-2xl shadow-lg">
+              <div className="col-span-6 md:col-span-5 h-48 sm:h-60 md:h-64 relative overflow-hidden rounded-2xl shadow-lg mt-2 md:mt-0 md:ml-2">
                 <Image
                   src="/images/about-2.jpg"
                   alt="Caregiver helping elderly client"
                   fill
-                  className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700"
-                  style={{ position: 'relative', height: '100%', width: '100%' }}
-                  width={300}
-                  height={300}
+                  className="object-cover object-center transform hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   quality={90}
                 />
               </div>
               
               {/* Third image - left bottom */}
-              <div className="col-span-6 md:col-span-5 h-44 sm:h-52 md:h-60 overflow-hidden rounded-2xl shadow-lg">
+              <div className="col-span-6 md:col-span-5 h-48 sm:h-60 md:h-64 relative overflow-hidden rounded-2xl shadow-lg mt-2 md:mt-2 md:ml-2">
                 <Image
                   src="/images/about-3.jpg"
                   alt="Professional caregiver with patient"
                   fill
-                  className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700"
-                  style={{ position: 'relative', height: '100%', width: '100%' }}
-                  width={300}
-                  height={300}
+                  className="object-cover object-center transform hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   quality={90}
                 />
               </div>
               
               {/* Fourth image - right bottom */}
-              <div className="col-span-12 md:col-span-7 h-56 sm:h-64 md:h-72 overflow-hidden rounded-2xl shadow-lg">
+              <div className="col-span-12 md:col-span-7 h-60 sm:h-72 md:h-80 relative overflow-hidden rounded-2xl shadow-lg mt-2">
                 <Image
                   src="/images/about-4.jpg"
                   alt="Special Touch homecare service"
                   fill
-                  className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700"
-                  style={{ position: 'relative', height: '100%', width: '100%' }}
-                  width={600}
-                  height={400}
+                  className="object-cover object-center transform hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   quality={90}
                 />

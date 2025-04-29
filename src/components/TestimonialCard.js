@@ -16,31 +16,31 @@ const TestimonialCard = ({ content, name, role, imageUrl }) => {
       </div>
 
       {/* Content */}
-      <div className="flex-grow mb-8">
+      <div className="flex-grow mb-6 min-h-[160px]">
         <p className="text-neutral-600 italic leading-relaxed text-lg">{content}</p>
       </div>
 
       {/* Author info */}
       <div className="flex items-center mt-auto">
         {imageUrl ? (
-          <div className="relative w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-white shadow-md">
+          <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-white shadow-md flex-shrink-0">
             <Image
               src={imageUrl}
               alt={name}
               fill
-              className="object-cover"
+              className="object-cover object-center"
               quality={90}
-              sizes="56px"
+              sizes="64px"
             />
           </div>
         ) : (
-          <div className="w-14 h-14 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 mr-4 shadow-md">
+          <div className="w-16 h-16 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 mr-4 shadow-md flex-shrink-0">
             <span className="text-lg font-bold">{name.charAt(0)}</span>
           </div>
         )}
         <div>
           <h4 className="font-semibold text-neutral-800 text-lg">{name}</h4>
-          {role && <p className="text-sm text-neutral-500">{role}</p>}
+          {role && <p className="text-neutral-500">{role}</p>}
         </div>
       </div>
     </div>

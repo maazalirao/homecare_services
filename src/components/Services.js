@@ -103,11 +103,11 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="section bg-white">
+    <section id="services" className="py-10 sm:py-14 md:py-16 bg-white">
       <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary-500 font-semibold inline-block mb-2">Our Services</span>
-          <h2 className="heading-2 text-neutral-800 mb-6">We Offer:</h2>
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
+          <span className="text-primary-500 font-semibold inline-block px-4 py-1 bg-primary-50 rounded-full mb-2">Our Services</span>
+          <h2 className="heading-2 text-neutral-800 mb-4">We Offer:</h2>
         </div>
 
         {/* Desktop services alternating layout */}
@@ -115,17 +115,17 @@ const Services = () => {
           {services.slice(0, 2).map((service, index) => (
             <div 
               key={service.id} 
-              className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-16 ${
+              className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-12 ${
                 index % 2 === 1 ? 'md:flex-row-reverse' : ''
               }`}
             >
               {/* Text content */}
               <div className="w-full md:w-1/2">
-                <h3 className="text-3xl font-bold text-neutral-800 mb-4">{service.title}</h3>
-                <p className="text-neutral-600 text-lg mb-6">{service.description}</p>
+                <h3 className="text-2xl md:text-3xl font-bold text-neutral-800 mb-4">{service.title}</h3>
+                <p className="text-neutral-600 text-lg mb-5">{service.description}</p>
                 
                 {/* Service details with bullet points */}
-                <div className="space-y-2 mb-8">
+                <div className="space-y-2 mb-6">
                   {renderServiceDetails(service.details)}
                 </div>
                 
@@ -157,7 +157,7 @@ const Services = () => {
           ))}
           
           {/* Rest of the services in a grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
             {services.slice(2).map((service) => (
               <ServiceCard
                 key={service.id}
@@ -170,10 +170,10 @@ const Services = () => {
           </div>
         </div>
 
-        {/* Mobile services slider - keep the existing mobile layout */}
+        {/* Mobile services slider */}
         <div className="md:hidden relative">
           <div 
-            className="flex overflow-x-auto pb-8 -mx-4 px-4 space-x-5 hide-scrollbar"
+            className="flex overflow-x-auto pb-8 -mx-4 px-4 space-x-4 hide-scrollbar"
             ref={servicesRef}
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
