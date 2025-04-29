@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react';
 import Image from 'next/image';
 import ServiceCard from './ServiceCard';
+import Link from 'next/link';
 
 const Services = () => {
   const servicesRef = useRef(null);
@@ -12,40 +13,55 @@ const Services = () => {
 
   const services = [
     {
-      title: "Personal Care",
-      description: "Assistance with daily activities including bathing, dressing, grooming, toileting, and mobility support.",
-      imageUrl: "https://images.unsplash.com/photo-1576765608866-5b51f8501d99?q=80&w=1887&auto=format&fit=crop",
+      id: 1,
+      title: "Personal Care & Support",
+      description: "Our caregivers support daily activities, prioritizing health, comfort, safety, and peace of mind for you or your loved one.",
+      details: [
+        "Personal Care & Feeding",
+        "Bathing and personal hygiene, dressing and grooming, toileting, transferring and positioning, feeding assistance, special diet management.",
+        "Household Chores & Errands",
+        "Laundry, light housekeeping, meal preparation, shopping, and other household chores.",
+        "Health Management",
+        "Medication reminders."
+      ],
+      imageUrl: "/images/doctor-taking-care-senior-woman-home.jpg",
       href: "/services/personal-care"
     },
     {
-      title: "Nursing Services",
-      description: "Professional nursing care including medication management, wound care, vital signs monitoring, and health assessments.",
-      imageUrl: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1887&auto=format&fit=crop",
+      id: 2,
+      title: "Nursing & Therapy",
+      description: "With Royal Care, you or your loved one will always have the medical support you need at home.",
+      details: [
+        "Physical Well-being",
+        "Gait and balance training, Health evaluations and screenings, Home safety assessments, Respiratory care, Wound care.",
+        "Health Management",
+        "Medication management, Nutritional management.",
+        "Therapeutic Support",
+        "Therapy sessions, Rehabilitation programs."
+      ],
+      imageUrl: "/images/doctor-talking-with-her-elder-patient.jpg",
       href: "/services/nursing"
     },
     {
-      title: "Companion Care",
+      id: 3,
+      title: "Companionship",
       description: "Friendly companionship, conversation, and emotional support for seniors living alone or feeling isolated.",
-      imageUrl: "https://images.unsplash.com/photo-1595781516977-50a7194d6b0a?q=80&w=1887&auto=format&fit=crop",
+      imageUrl: "/images/medium-shot-women-looking-each-other.jpg",
       href: "/services/companion"
     },
     {
-      title: "Household Support",
-      description: "Light housekeeping, meal preparation, laundry, shopping, and errands to maintain a safe and clean living environment.",
-      imageUrl: "https://images.unsplash.com/photo-1493603268518-36488d51a716?q=80&w=1950&auto=format&fit=crop",
-      href: "/services/household"
+      id: 4,
+      title: "Live-In Care",
+      description: "24/7 care and support for those who need round-the-clock assistance in the comfort of their own home.",
+      imageUrl: "/images/senior-woman-talking-with-her-doctor.jpg",
+      href: "/services/live-in"
     },
     {
-      title: "Specialized Care",
-      description: "Tailored care for clients with Alzheimer's, Parkinson's, or other specific medical conditions.",
-      imageUrl: "https://images.unsplash.com/photo-1523841470613-3bcb6f158efd?q=80&w=1935&auto=format&fit=crop",
-      href: "/services/specialized"
-    },
-    {
-      title: "Respite Care",
-      description: "Temporary relief for family caregivers, allowing them to take a break while ensuring their loved ones receive quality care.",
-      imageUrl: "https://images.unsplash.com/photo-1604024554928-5624a20aa7c4?q=80&w=1935&auto=format&fit=crop",
-      href: "/services/respite"
+      id: 5,
+      title: "CDPAP",
+      description: "Consumer Directed Personal Assistance Program allowing loved ones to provide paid care.",
+      imageUrl: "/images/happy-old-woman-nursing-home-sitting-couch-talking-with-her-caretaker-retired-woman-with-crutches.jpg",
+      href: "/services/cdpap"
     }
   ];
 
@@ -67,31 +83,94 @@ const Services = () => {
     servicesRef.current.scrollLeft = scrollLeft - walk;
   };
 
+  // Render service details with bullet points
+  const renderServiceDetails = (details) => {
+    if (!details) return null;
+    
+    const items = [];
+    for (let i = 0; i < details.length; i += 2) {
+      if (i + 1 < details.length) {
+        items.push(
+          <div key={i} className="mb-4">
+            <h4 className="text-lg font-semibold text-neutral-800 mb-1">{details[i]}</h4>
+            <p className="text-neutral-600">{details[i + 1]}</p>
+          </div>
+        );
+      }
+    }
+    
+    return items;
+  };
+
   return (
     <section id="services" className="section bg-white">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary-500 font-semibold inline-block mb-2">Our Services</span>
-          <h2 className="heading-2 text-neutral-800 mb-6">Comprehensive Home Care Solutions</h2>
-          <p className="text-neutral-600 text-lg">
-            We offer a wide range of personalized home care services designed to meet the unique needs of each client. Our compassionate caregivers are trained to provide professional support while promoting independence and dignity.
-          </p>
+          <h2 className="heading-2 text-neutral-800 mb-6">We Offer:</h2>
         </div>
 
-        {/* Desktop services grid */}
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              title={service.title}
-              description={service.description}
-              imageUrl={service.imageUrl}
-              href={service.href}
-            />
+        {/* Desktop services alternating layout */}
+        <div className="hidden md:block">
+          {services.slice(0, 2).map((service, index) => (
+            <div 
+              key={service.id} 
+              className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-16 ${
+                index % 2 === 1 ? 'md:flex-row-reverse' : ''
+              }`}
+            >
+              {/* Text content */}
+              <div className="w-full md:w-1/2">
+                <h3 className="text-3xl font-bold text-neutral-800 mb-4">{service.title}</h3>
+                <p className="text-neutral-600 text-lg mb-6">{service.description}</p>
+                
+                {/* Service details with bullet points */}
+                <div className="space-y-2 mb-8">
+                  {renderServiceDetails(service.details)}
+                </div>
+                
+                <Link 
+                  href={service.href}
+                  className="btn-primary inline-flex items-center"
+                >
+                  Apply for care
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </Link>
+              </div>
+              
+              {/* Image */}
+              <div className="w-full md:w-1/2">
+                <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                  <Image
+                    src={service.imageUrl}
+                    alt={service.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                    quality={90}
+                  />
+                </div>
+              </div>
+            </div>
           ))}
+          
+          {/* Rest of the services in a grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            {services.slice(2).map((service) => (
+              <ServiceCard
+                key={service.id}
+                title={service.title}
+                description={service.description}
+                imageUrl={service.imageUrl}
+                href={service.href}
+              />
+            ))}
+          </div>
         </div>
 
-        {/* Mobile services slider */}
+        {/* Mobile services slider - keep the existing mobile layout */}
         <div className="md:hidden relative">
           <div 
             className="flex overflow-x-auto pb-8 -mx-4 px-4 space-x-5 hide-scrollbar"
@@ -101,8 +180,8 @@ const Services = () => {
             onMouseLeave={handleMouseUp}
             onMouseMove={handleMouseMove}
           >
-            {services.map((service, index) => (
-              <div key={index} className="flex-shrink-0 w-[85%]">
+            {services.map((service) => (
+              <div key={service.id} className="flex-shrink-0 w-[85%]">
                 <ServiceCard
                   title={service.title}
                   description={service.description}

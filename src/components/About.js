@@ -1,25 +1,45 @@
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 const About = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setIsVisible(true);
+      }
+    }, { threshold: 0.1 });
+
+    const section = document.getElementById('about');
+    if (section) observer.observe(section);
+
+    return () => {
+      if (section) observer.unobserve(section);
+    };
+  }, []);
+
   return (
-    <section id="about" className="section bg-neutral-50">
+    <section id="about" className="section bg-neutral-50 overflow-hidden">
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <div>
-              <span className="text-primary-500 font-semibold">About Us</span>
-              <h2 className="heading-2 text-neutral-800 mt-2 mb-6">Dedicated to Improving Lives Through Quality Care</h2>
-              <p className="text-neutral-600 text-lg leading-relaxed mb-8">
-                Special Touch Home Care Group has been providing exceptional care services throughout New York for over 15 years. 
-                Our dedicated team of caregivers is committed to enhancing the quality of life for our clients through personalized, 
-                compassionate care that respects dignity and fosters independence.
-              </p>
-            </div>
+        <div className={`text-center mb-12 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
+          <span className="text-primary-500 font-semibold inline-block mb-2 px-4 py-1 bg-primary-50 rounded-full">About Us</span>
+          <h2 className="heading-2 text-neutral-800 max-w-3xl mx-auto">Dedicated to Improving Lives Through Quality Care</h2>
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          {/* Left Column */}
+          <div className={`space-y-8 order-2 lg:order-1 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: '0.3s'}}>
+            <p className="text-neutral-600 text-lg leading-relaxed">
+              Special Touch Home Care Group has been providing exceptional care services throughout New York for over 15 years. 
+              Our dedicated team of caregivers is committed to enhancing the quality of life for our clients through personalized, 
+              compassionate care that respects dignity and fosters independence.
+            </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
-              <div className="flex items-start group">
-                <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+              <div className="flex items-start group bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                   </svg>
                 </div>
@@ -29,9 +49,9 @@ const About = () => {
                 </div>
               </div>
               
-              <div className="flex items-start group">
-                <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="flex items-start group bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
                   </svg>
                 </div>
@@ -41,9 +61,9 @@ const About = () => {
                 </div>
               </div>
               
-              <div className="flex items-start group">
-                <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="flex items-start group bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                   </svg>
                 </div>
@@ -53,9 +73,9 @@ const About = () => {
                 </div>
               </div>
               
-              <div className="flex items-start group">
-                <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="flex items-start group bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
                   </svg>
                 </div>
@@ -66,7 +86,7 @@ const About = () => {
               </div>
             </div>
             
-            <div className="bg-primary-50 p-8 rounded-2xl border border-primary-100 shadow-sm">
+            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-8 rounded-2xl border border-primary-100 shadow-sm">
               <h3 className="text-xl font-bold text-primary-800 mb-4">Our Mission</h3>
               <p className="text-primary-700 italic text-lg">
                 "To enhance the quality of life for our clients through compassionate, personalized care that promotes independence, dignity, and well-being in the comfort of their own homes."
@@ -74,51 +94,73 @@ const About = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-2 gap-6">
-            <div className="space-y-6">
-              <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden shadow-lg transform translate-y-6 card-hover">
+          {/* Right Column - Image Gallery */}
+          <div className={`relative order-1 lg:order-2 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: '0.6s'}}>
+            <div className="grid grid-cols-12 gap-3 md:gap-4">
+              {/* First image - large top */}
+              <div className="col-span-12 md:col-span-7 h-56 sm:h-64 md:h-72 overflow-hidden rounded-2xl shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1454418747937-bd95bb945625?q=80&w=1770&auto=format&fit=crop"
-                  alt="Caregiver with elderly client"
+                  src="/images/about-1.jpg"
+                  alt="Special Touch homecare professional with client"
                   fill
-                  className="object-cover"
+                  className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700"
+                  style={{ position: 'relative', height: '100%', width: '100%' }}
+                  width={600}
+                  height={400}
                   sizes="(max-width: 768px) 100vw, 50vw"
                   quality={90}
                 />
               </div>
-              <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden shadow-lg card-hover">
+              
+              {/* Second image - right column top */}
+              <div className="col-span-6 md:col-span-5 h-44 sm:h-52 md:h-60 overflow-hidden rounded-2xl shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=1770&auto=format&fit=crop"
-                  alt="Home care services"
+                  src="/images/about-2.jpg"
+                  alt="Caregiver helping elderly client"
                   fill
-                  className="object-cover"
+                  className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700"
+                  style={{ position: 'relative', height: '100%', width: '100%' }}
+                  width={300}
+                  height={300}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={90}
+                />
+              </div>
+              
+              {/* Third image - left bottom */}
+              <div className="col-span-6 md:col-span-5 h-44 sm:h-52 md:h-60 overflow-hidden rounded-2xl shadow-lg">
+                <Image
+                  src="/images/about-3.jpg"
+                  alt="Professional caregiver with patient"
+                  fill
+                  className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700"
+                  style={{ position: 'relative', height: '100%', width: '100%' }}
+                  width={300}
+                  height={300}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={90}
+                />
+              </div>
+              
+              {/* Fourth image - right bottom */}
+              <div className="col-span-12 md:col-span-7 h-56 sm:h-64 md:h-72 overflow-hidden rounded-2xl shadow-lg">
+                <Image
+                  src="/images/about-4.jpg"
+                  alt="Special Touch homecare service"
+                  fill
+                  className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700"
+                  style={{ position: 'relative', height: '100%', width: '100%' }}
+                  width={600}
+                  height={400}
                   sizes="(max-width: 768px) 100vw, 50vw"
                   quality={90}
                 />
               </div>
             </div>
-            <div className="space-y-6">
-              <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden shadow-lg card-hover">
-                <Image
-                  src="https://images.unsplash.com/photo-1624300603538-1c12b9e44e4a?q=80&w=1974&auto=format&fit=crop"
-                  alt="Professional caregiver"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  quality={90}
-                />
-              </div>
-              <div className="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden shadow-lg transform translate-y-6 card-hover">
-                <Image
-                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1770&auto=format&fit=crop"
-                  alt="Elderly client smiling"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  quality={90}
-                />
-              </div>
-            </div>
+            
+            {/* Decorative elements */}
+            <div className="hidden md:block absolute -top-6 -right-6 w-24 h-24 bg-primary-100 rounded-full opacity-20 z-0"></div>
+            <div className="hidden md:block absolute -bottom-10 -left-10 w-32 h-32 bg-secondary-100 rounded-full opacity-30 z-0"></div>
           </div>
         </div>
       </div>
