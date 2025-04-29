@@ -7,12 +7,30 @@
   --background-rgb: 255, 255, 255;
 }
 
+html {
+  scroll-padding-bottom: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: #ffffff;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+/* Remove extra space after footer */
+footer {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 @layer base {

@@ -13,6 +13,9 @@ const Navbar = () => {
       setIsScrolled(window.scrollY > 20);
     };
     
+    // Initialize scroll state on mount
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll);
     
     return () => {
@@ -25,22 +28,22 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-blue-900/90 backdrop-blur-sm'}`}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="relative z-10 flex items-center">
             <div className="relative h-10 w-10 mr-2">
-              <div className="absolute inset-0 bg-blue-600 rounded-lg rotate-6"></div>
+              <div className="absolute inset-0 bg-blue-400 rounded-lg rotate-6"></div>
               <div className="absolute inset-0 bg-blue-500 rounded-lg -rotate-3 flex items-center justify-center text-white font-bold text-xl">
                 ST
               </div>
             </div>
             <div>
-              <h1 className={`font-bold text-xl transition-colors duration-300 ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
-                Special Touch <span className="text-blue-600">Care</span>
+              <h1 className={`font-bold text-xl transition-colors duration-300 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
+                Special Touch <span className={isScrolled ? 'text-blue-600' : 'text-blue-300'}>Care</span>
               </h1>
-              <span className={`text-xs font-medium block transition-colors duration-300 ${isScrolled ? 'text-gray-600' : 'text-gray-200'}`}>
+              <span className={`text-xs font-medium block transition-colors duration-300 ${isScrolled ? 'text-gray-600' : 'text-blue-100'}`}>
                 Home Care Services
               </span>
             </div>
@@ -50,31 +53,31 @@ const Navbar = () => {
           <nav className="hidden lg:flex items-center space-x-8">
             <Link 
               href="/#about" 
-              className={`font-medium transition-colors duration-300 hover:text-blue-600 ${isScrolled ? 'text-gray-700' : 'text-white'}`}
+              className={`font-medium transition-colors duration-300 ${isScrolled ? 'text-gray-800 hover:text-blue-700' : 'text-white hover:text-blue-300'}`}
             >
               About
             </Link>
             <Link 
               href="/#services" 
-              className={`font-medium transition-colors duration-300 hover:text-blue-600 ${isScrolled ? 'text-gray-700' : 'text-white'}`}
+              className={`font-medium transition-colors duration-300 ${isScrolled ? 'text-gray-800 hover:text-blue-700' : 'text-white hover:text-blue-300'}`}
             >
               Services
             </Link>
             <Link 
               href="/#testimonials" 
-              className={`font-medium transition-colors duration-300 hover:text-blue-600 ${isScrolled ? 'text-gray-700' : 'text-white'}`}
+              className={`font-medium transition-colors duration-300 ${isScrolled ? 'text-gray-800 hover:text-blue-700' : 'text-white hover:text-blue-300'}`}
             >
               Testimonials
             </Link>
             <Link 
               href="/#careers" 
-              className={`font-medium transition-colors duration-300 hover:text-blue-600 ${isScrolled ? 'text-gray-700' : 'text-white'}`}
+              className={`font-medium transition-colors duration-300 ${isScrolled ? 'text-gray-800 hover:text-blue-700' : 'text-white hover:text-blue-300'}`}
             >
               Careers
             </Link>
             <Link 
               href="/#contact" 
-              className={`font-medium transition-colors duration-300 hover:text-blue-600 ${isScrolled ? 'text-gray-700' : 'text-white'}`}
+              className={`font-medium transition-colors duration-300 ${isScrolled ? 'text-gray-800 hover:text-blue-700' : 'text-white hover:text-blue-300'}`}
             >
               Contact
             </Link>
@@ -82,7 +85,7 @@ const Navbar = () => {
             {/* Phone number */}
             <a 
               href="tel:+12125551234" 
-              className={`flex items-center font-medium transition-colors duration-300 ${isScrolled ? 'text-gray-700' : 'text-white'}`}
+              className={`flex items-center font-medium transition-colors duration-300 ${isScrolled ? 'text-gray-800' : 'text-white'}`}
             >
               <span className={`flex items-center justify-center w-8 h-8 rounded-full mr-2 ${
                 isScrolled ? 'bg-blue-100 text-blue-600' : 'bg-white/20 text-white'
@@ -138,27 +141,21 @@ const Navbar = () => {
                 <div className="relative w-6 h-5">
                   <span className={`absolute inset-0 w-6 h-0.5 transition-all duration-300 ${
                     menuOpen 
-                      ? 'top-1/2 -mt-0.5 rotate-45 bg-gray-800' 
-                      : isScrolled 
-                        ? 'bg-gray-800 top-0' 
-                        : 'bg-white top-0'
-                  }`}></span>
+                      ? 'top-1/2 -mt-0.5 rotate-45' 
+                      : 'top-0'
+                  } ${isScrolled ? 'bg-blue-600' : 'bg-white'}`}></span>
                   
                   <span className={`absolute inset-0 w-6 h-0.5 top-1/2 -mt-0.5 transition-all duration-300 ${
                     menuOpen 
                       ? 'opacity-0' 
-                      : isScrolled 
-                        ? 'bg-gray-800' 
-                        : 'bg-white'
-                  }`}></span>
+                      : ''
+                  } ${isScrolled ? 'bg-blue-600' : 'bg-white'}`}></span>
                   
                   <span className={`absolute inset-0 w-6 h-0.5 transition-all duration-300 ${
                     menuOpen 
-                      ? 'bottom-1/2 mb-0 -rotate-45 bg-gray-800' 
-                      : isScrolled 
-                        ? 'bg-gray-800 bottom-0' 
-                        : 'bg-white bottom-0'
-                  }`}></span>
+                      ? 'bottom-1/2 mb-0 -rotate-45' 
+                      : 'bottom-0'
+                  } ${isScrolled ? 'bg-blue-600' : 'bg-white'}`}></span>
                 </div>
               </div>
             </button>
