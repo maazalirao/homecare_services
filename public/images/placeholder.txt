@@ -1,0 +1,9 @@
+Please add the following image files in this directory:
+
+1. hero-bg.jpg - A high-quality image of a caregiver with a client/patient
+2. about-1.jpg, about-2.jpg, about-3.jpg, about-4.jpg - Images for the About section
+3. service-personal-care.jpg, service-nursing.jpg, service-companion.jpg, service-household.jpg, service-specialized.jpg, service-respite.jpg - Images for each service
+4. testimonial-1.jpg, testimonial-2.jpg, testimonial-3.jpg, testimonial-4.jpg, testimonial-5.jpg, testimonial-6.jpg - Photos of testimonial clients
+5. careers.jpg - Image for the careers section
+
+These images should be high-resolution, professionally taken photos that reflect the quality and professionalism of Special Touch Home Care Group. 

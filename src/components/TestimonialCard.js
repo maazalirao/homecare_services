@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const TestimonialCard = ({ content, name, role, imageUrl }) => {
   return (
-    <div className="card relative flex flex-col h-full">
+    <div className="card relative flex flex-col h-full shadow-lg hover:shadow-xl transition-all duration-300">
       {/* Quote icon */}
       <div className="absolute top-6 right-6 w-12 h-12 text-primary-100">
         <svg
@@ -17,27 +17,29 @@ const TestimonialCard = ({ content, name, role, imageUrl }) => {
 
       {/* Content */}
       <div className="flex-grow mb-8">
-        <p className="text-neutral-600 italic leading-relaxed">{content}</p>
+        <p className="text-neutral-600 italic leading-relaxed text-lg">{content}</p>
       </div>
 
       {/* Author info */}
       <div className="flex items-center mt-auto">
         {imageUrl ? (
-          <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+          <div className="relative w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-white shadow-md">
             <Image
               src={imageUrl}
               alt={name}
               fill
               className="object-cover"
+              quality={90}
+              sizes="56px"
             />
           </div>
         ) : (
-          <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 mr-4">
+          <div className="w-14 h-14 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 mr-4 shadow-md">
             <span className="text-lg font-bold">{name.charAt(0)}</span>
           </div>
         )}
         <div>
-          <h4 className="font-semibold text-neutral-800">{name}</h4>
+          <h4 className="font-semibold text-neutral-800 text-lg">{name}</h4>
           {role && <p className="text-sm text-neutral-500">{role}</p>}
         </div>
       </div>

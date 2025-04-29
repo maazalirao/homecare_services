@@ -14,37 +14,37 @@ const Services = () => {
     {
       title: "Personal Care",
       description: "Assistance with daily activities including bathing, dressing, grooming, toileting, and mobility support.",
-      imageUrl: "/images/service-personal-care.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1576765608866-5b51f8501d99?q=80&w=1887&auto=format&fit=crop",
       href: "/services/personal-care"
     },
     {
       title: "Nursing Services",
       description: "Professional nursing care including medication management, wound care, vital signs monitoring, and health assessments.",
-      imageUrl: "/images/service-nursing.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1887&auto=format&fit=crop",
       href: "/services/nursing"
     },
     {
       title: "Companion Care",
       description: "Friendly companionship, conversation, and emotional support for seniors living alone or feeling isolated.",
-      imageUrl: "/images/service-companion.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1595781516977-50a7194d6b0a?q=80&w=1887&auto=format&fit=crop",
       href: "/services/companion"
     },
     {
       title: "Household Support",
       description: "Light housekeeping, meal preparation, laundry, shopping, and errands to maintain a safe and clean living environment.",
-      imageUrl: "/images/service-household.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1493603268518-36488d51a716?q=80&w=1950&auto=format&fit=crop",
       href: "/services/household"
     },
     {
       title: "Specialized Care",
       description: "Tailored care for clients with Alzheimer's, Parkinson's, or other specific medical conditions.",
-      imageUrl: "/images/service-specialized.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1523841470613-3bcb6f158efd?q=80&w=1935&auto=format&fit=crop",
       href: "/services/specialized"
     },
     {
       title: "Respite Care",
       description: "Temporary relief for family caregivers, allowing them to take a break while ensuring their loved ones receive quality care.",
-      imageUrl: "/images/service-respite.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1604024554928-5624a20aa7c4?q=80&w=1935&auto=format&fit=crop",
       href: "/services/respite"
     }
   ];
@@ -63,22 +63,23 @@ const Services = () => {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - servicesRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll speed multiplier
+    const walk = (x - startX) * 2;
     servicesRef.current.scrollLeft = scrollLeft - walk;
   };
 
   return (
-    <section id="services" className="section bg-neutral-50">
+    <section id="services" className="section bg-white">
       <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="heading-2 text-neutral-800 mb-4">Our Services</h2>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-primary-500 font-semibold inline-block mb-2">Our Services</span>
+          <h2 className="heading-2 text-neutral-800 mb-6">Comprehensive Home Care Solutions</h2>
           <p className="text-neutral-600 text-lg">
-            At Special Touch Home Care Group, we treat our clients like family. Our personalized home care services are delivered with genuine love, attention, and the utmost care.
+            We offer a wide range of personalized home care services designed to meet the unique needs of each client. Our compassionate caregivers are trained to provide professional support while promoting independence and dignity.
           </p>
         </div>
 
-        {/* Desktop Services Grid */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Desktop services grid */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
@@ -90,19 +91,18 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Mobile Services Carousel - Scrollable/Swipeable */}
-        <div 
-          className="md:hidden overflow-x-auto pb-6 -mx-4 px-4 scrollbar-hide relative"
-          ref={servicesRef}
-          onMouseDown={handleMouseDown}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-          onMouseMove={handleMouseMove}
-          style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
-        >
-          <div className="flex space-x-6" style={{ minWidth: 'max-content' }}>
+        {/* Mobile services slider */}
+        <div className="md:hidden relative">
+          <div 
+            className="flex overflow-x-auto pb-8 -mx-4 px-4 space-x-5 hide-scrollbar"
+            ref={servicesRef}
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            onMouseMove={handleMouseMove}
+          >
             {services.map((service, index) => (
-              <div key={index} className="w-80 flex-shrink-0">
+              <div key={index} className="flex-shrink-0 w-[85%]">
                 <ServiceCard
                   title={service.title}
                   description={service.description}
@@ -112,41 +112,18 @@ const Services = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Service Process */}
-        <div className="mt-20 pt-16 border-t border-neutral-200">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="heading-2 text-neutral-800 mb-4">How It Works</h2>
-            <p className="text-neutral-600 text-lg">
-              Getting started with Special Touch Home Care is simple. Our streamlined process ensures you or your loved one receives the right care quickly and efficiently.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="card text-center animate-fade-in">
-              <div className="w-16 h-16 rounded-full bg-primary-500 text-white text-2xl font-bold flex items-center justify-center mx-auto mb-6">1</div>
-              <h3 className="heading-3 text-neutral-800 mb-3">Initial Consultation</h3>
-              <p className="text-neutral-600">
-                We start with a free consultation to understand your needs and explain how we can help. This can be done in-person or virtually.
-              </p>
-            </div>
-
-            <div className="card text-center animate-fade-in">
-              <div className="w-16 h-16 rounded-full bg-primary-500 text-white text-2xl font-bold flex items-center justify-center mx-auto mb-6">2</div>
-              <h3 className="heading-3 text-neutral-800 mb-3">Personalized Care Plan</h3>
-              <p className="text-neutral-600">
-                Our team develops a customized care plan tailored to your specific needs, preferences, and medical requirements.
-              </p>
-            </div>
-
-            <div className="card text-center animate-fade-in">
-              <div className="w-16 h-16 rounded-full bg-primary-500 text-white text-2xl font-bold flex items-center justify-center mx-auto mb-6">3</div>
-              <h3 className="heading-3 text-neutral-800 mb-3">Caregiver Matching</h3>
-              <p className="text-neutral-600">
-                We carefully match you with the right caregiver based on needs, personality, and schedule to ensure the perfect fit.
-              </p>
-            </div>
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white pointer-events-none"></div>
+          
+          <div className="flex justify-center mt-4 space-x-2">
+            {services.map((_, index) => (
+              <button
+                key={index}
+                className={`w-2.5 h-2.5 rounded-full ${
+                  index === 0 ? 'bg-primary-500' : 'bg-neutral-300'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </div>
