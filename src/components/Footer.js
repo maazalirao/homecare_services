@@ -9,17 +9,14 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="space-y-4">
             <Link href="/" className="inline-block">
-              <div className="relative w-48 h-12">
-                <Image 
-                  src="/logo-white.svg" 
-                  alt="Special Touch Home Care Group" 
-                  fill
-                  className="object-contain"
-                />
-              </div>
+              <h1 className="font-bold text-xl md:text-2xl text-white">
+                <span className="text-[#58b4db]">Special</span> 
+                <span>Touch</span>
+                <span className="block text-sm font-medium ml-1">Home Care Services</span>
+              </h1>
             </Link>
             <p className="text-white text-sm leading-relaxed">
-              Providing compassionate and professional home care services to New York families for over 15 years.
+              Providing compassionate and professional home care services to New York families for over 30 years.
             </p>
             <div className="flex space-x-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-white hover:text-[#58b4db] transition-colors">

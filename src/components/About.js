@@ -24,19 +24,47 @@ const About = () => {
   return (
     <section id="about" className="section bg-neutral-50 overflow-hidden">
       <div className="container-custom">
+        {/* Heading - Always First */}
         <div className={`text-center mb-10 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           <span className="text-[#0d2c4b] font-semibold inline-block mb-2 px-4 py-1 bg-neutral-200 rounded-full">About Us</span>
           <h2 className="heading-2 text-[#0d2c4b] max-w-3xl mx-auto">Dedicated to Improving Lives Through Quality Care</h2>
+          
+          {/* Introduction - Desktop Only */}
+          <p className="text-neutral-700 text-lg leading-relaxed max-w-3xl mx-auto mt-6 hidden md:block">
+            Special Touch Home Care Group has been providing exceptional care services throughout New York for over 30 years. 
+            Our dedicated team of caregivers is committed to enhancing the quality of life for our clients through personalized, 
+            compassionate care that respects dignity and fosters independence.
+          </p>
+        </div>
+        
+        {/* Leadership Section - Second on Mobile, First in Left Column on Desktop */}
+        <div className={`mb-8 lg:hidden ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: '0.3s'}}>
+          <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-[#58b4db]">
+            <h3 className="text-xl font-bold text-[#0d2c4b] mb-2">Leadership</h3>
+            <p className="text-neutral-700 mb-3">
+              <span className="font-semibold text-[#0d2c4b]">Eli Feldman</span>, CEO & Founder of Special Touch Home Care, brings a tremendous amount of experience and knowledge to the healthcare business. 
+              His passionate approach to patient care and innovative solutions has established our organization as a leader in the home healthcare industry.
+            </p>
+            <p className="text-neutral-700">
+              Under his visionary leadership, we've expanded our services while maintaining our core commitment to providing exceptional personalized care for every client.
+            </p>
+          </div>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
-          {/* Left Column */}
-          <div className={`space-y-6 order-2 lg:order-1 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: '0.3s'}}>
-            <p className="text-neutral-700 text-lg leading-relaxed">
-              Special Touch Home Care Group has been providing exceptional care services throughout New York for over 15 years. 
-              Our dedicated team of caregivers is committed to enhancing the quality of life for our clients through personalized, 
-              compassionate care that respects dignity and fosters independence.
-            </p>
+          {/* Left Column - Features and Mission */}
+          <div className={`space-y-6 order-3 lg:order-1 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: '0.3s'}}>
+            {/* Leadership - Only visible on desktop */}
+            <div className="hidden lg:block bg-white p-6 rounded-xl shadow-sm border-l-4 border-[#58b4db]">
+              <h3 className="text-xl font-bold text-[#0d2c4b] mb-2">Leadership</h3>
+              <p className="text-neutral-700 mb-3">
+                <span className="font-semibold text-[#0d2c4b]">Eli Feldman</span>, CEO & Founder of Special Touch Home Care, brings a tremendous amount of experience and knowledge to the healthcare business. 
+                His passionate approach to patient care and innovative solutions has established our organization as a leader in the home healthcare industry.
+              </p>
+              <p className="text-neutral-700">
+                Under his visionary leadership, we've expanded our services while maintaining our core commitment to providing exceptional personalized care for every client.
+              </p>
+            </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               <div className="flex items-start group bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
@@ -47,7 +75,7 @@ const About = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-[#0d2c4b] mb-1 group-hover:text-[#0d2c4b] transition-colors">Trusted Expertise</h3>
-                  <p className="text-neutral-700">Over 15 years of specialized home care experience.</p>
+                  <p className="text-neutral-700">Over 30 years of specialized home care experience.</p>
                 </div>
               </div>
               
@@ -96,8 +124,8 @@ const About = () => {
             </div>
           </div>
           
-          {/* Right Column - Image Gallery */}
-          <div className={`relative order-1 lg:order-2 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: '0.6s'}}>
+          {/* Right Column - Image Gallery - Third on Mobile, Second on Desktop */}
+          <div className={`relative order-2 lg:order-2 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: '0.6s'}}>
             <div className="grid grid-cols-12 gap-2">
               {/* First image - large top */}
               <div className="col-span-12 md:col-span-7 h-60 sm:h-72 md:h-80 relative overflow-hidden rounded-2xl shadow-lg">

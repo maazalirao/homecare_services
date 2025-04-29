@@ -83,7 +83,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-[600px] py-16 md:py-24 overflow-hidden bg-white">
+    <section className="min-h-[600px] pt-24 pb-16 md:py-24 overflow-hidden bg-white">
       <div className="container mx-auto px-4 md:px-8">
         {/* Desktop layout */}
         <div className="hidden md:flex justify-between items-center">
@@ -124,14 +124,14 @@ const HeroSection = () => {
                 before:absolute before:inset-0 before:bg-gradient-to-t before:from-[#0d2c4b]/20 before:to-transparent before:opacity-70 before:rounded-lg before:z-[1] 
                 after:absolute after:inset-0 after:rounded-lg after:shadow-[0_0_20px_rgba(0,0,0,0.2)]">
               <Image
-                src="/images/doctor-talking-with-her-elder-patient.jpg"
-                alt="Doctor talking with elderly patient in wheelchair"
+                src="/images/nurse-old-man-posing-while-looking-camera.jpg"
+                alt="Nurse and elderly man posing while looking at camera"
                 fill
                 priority
                 quality={95}
                 className="object-cover rounded-lg shadow-xl z-0 animate-fadeIn"
                 sizes="(max-width: 768px) 100vw, 33vw"
-                style={{ objectPosition: 'center 20%' }}
+                style={{ objectPosition: 'center' }}
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-[#0d2c4b]/10 via-transparent to-[#58b4db]/10 rounded-lg z-[2] mix-blend-overlay" />
             </div>
@@ -154,35 +154,26 @@ const HeroSection = () => {
         {/* Mobile layout */}
         <div className="md:hidden flex flex-col items-center px-4">
           {/* Image first on mobile */}
-          <div className="relative w-full aspect-square max-w-xs mb-8 mx-auto
-              transform transition-all duration-700 
-              before:absolute before:inset-0 before:bg-gradient-to-t before:from-[#0d2c4b]/20 before:to-transparent before:opacity-70 before:rounded-lg before:z-[1]
-              after:absolute after:inset-0 after:rounded-lg after:shadow-[0_0_20px_rgba(0,0,0,0.2)]">
+          <div className="relative w-full aspect-[16/10] max-w-sm mb-8 mx-auto transform transition-all duration-700">
             <Image
-              src="/images/doctor-talking-with-her-elder-patient.jpg"
-              alt="Doctor talking with elderly patient in wheelchair"
+              src="/images/nurse-old-man-posing-while-looking-camera.jpg"
+              alt="Nurse and elderly man posing while looking at camera"
               fill
               priority
               quality={95}
-              className="object-cover rounded-lg shadow-xl z-0 animate-fadeIn"
+              className="object-contain z-0 animate-fadeIn"
               sizes="(max-width: 768px) 100vw"
-              style={{ objectPosition: 'center 20%' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#0d2c4b]/10 via-transparent to-[#58b4db]/10 rounded-lg z-[2] mix-blend-overlay" />
           </div>
           
           {/* Text content */}
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold my-3">
+          <div className="text-center mb-6">
+            <h1 className="text-3xl font-bold">
               <span className="block text-[#58b4db]">
                 Best Quality
               </span>
               <span className="block text-[#0d2c4b]">Home Care, Multilingual Expertise</span>
             </h1>
-            
-            <p className="text-neutral-700 mt-4">
-              New York's trusted home care agency, providing personalized and top-rated home care to families for over 30 years.
-            </p>
           </div>
           
           {/* Buttons */}
