@@ -25,14 +25,14 @@ const About = () => {
     <section id="about" className="section bg-neutral-50 overflow-hidden">
       <div className="container-custom">
         <div className={`text-center mb-10 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
-          <span className="text-primary-500 font-semibold inline-block mb-2 px-4 py-1 bg-primary-50 rounded-full">About Us</span>
-          <h2 className="heading-2 text-neutral-800 max-w-3xl mx-auto">Dedicated to Improving Lives Through Quality Care</h2>
+          <span className="text-black font-semibold inline-block mb-2 px-4 py-1 bg-neutral-200 rounded-full">About Us</span>
+          <h2 className="heading-2 text-black max-w-3xl mx-auto">Dedicated to Improving Lives Through Quality Care</h2>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           {/* Left Column */}
           <div className={`space-y-6 order-2 lg:order-1 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: '0.3s'}}>
-            <p className="text-neutral-600 text-lg leading-relaxed">
+            <p className="text-black text-lg leading-relaxed">
               Special Touch Home Care Group has been providing exceptional care services throughout New York for over 15 years. 
               Our dedicated team of caregivers is committed to enhancing the quality of life for our clients through personalized, 
               compassionate care that respects dignity and fosters independence.
@@ -40,57 +40,57 @@ const About = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               <div className="flex items-start group bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-full bg-neutral-200 flex items-center justify-center text-black mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-neutral-800 mb-1 group-hover:text-primary-600 transition-colors">Trusted Expertise</h3>
-                  <p className="text-neutral-600">Over 15 years of specialized home care experience.</p>
+                  <h3 className="text-lg font-semibold text-black mb-1 group-hover:text-black transition-colors">Trusted Expertise</h3>
+                  <p className="text-black">Over 15 years of specialized home care experience.</p>
                 </div>
               </div>
               
               <div className="flex items-start group bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-full bg-neutral-200 flex items-center justify-center text-black mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-neutral-800 mb-1 group-hover:text-primary-600 transition-colors">Qualified Staff</h3>
-                  <p className="text-neutral-600">Extensively trained and certified caregivers.</p>
+                  <h3 className="text-lg font-semibold text-black mb-1 group-hover:text-black transition-colors">Qualified Staff</h3>
+                  <p className="text-black">Extensively trained and certified caregivers.</p>
                 </div>
               </div>
               
               <div className="flex items-start group bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-full bg-neutral-200 flex items-center justify-center text-black mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-neutral-800 mb-1 group-hover:text-primary-600 transition-colors">In-Home Service</h3>
-                  <p className="text-neutral-600">Care provided in the comfort of your own home.</p>
+                  <h3 className="text-lg font-semibold text-black mb-1 group-hover:text-black transition-colors">In-Home Service</h3>
+                  <p className="text-black">Care provided in the comfort of your own home.</p>
                 </div>
               </div>
               
               <div className="flex items-start group bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
-                <div className="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-full bg-neutral-200 flex items-center justify-center text-black mr-4 flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-neutral-800 mb-1 group-hover:text-primary-600 transition-colors">Custom Care Plans</h3>
-                  <p className="text-neutral-600">Personalized care tailored to individual needs.</p>
+                  <h3 className="text-lg font-semibold text-black mb-1 group-hover:text-black transition-colors">Custom Care Plans</h3>
+                  <p className="text-black">Personalized care tailored to individual needs.</p>
                 </div>
               </div>
             </div>
             
-            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-8 rounded-2xl border border-primary-100 shadow-sm">
-              <h3 className="text-xl font-bold text-primary-800 mb-4">Our Mission</h3>
-              <p className="text-primary-700 italic text-lg">
+            <div className="bg-gradient-to-r from-neutral-200 to-neutral-300 p-8 rounded-2xl border border-neutral-300 shadow-sm">
+              <h3 className="text-xl font-bold text-black mb-4">Our Mission</h3>
+              <p className="text-black italic text-lg">
                 "To enhance the quality of life for our clients through compassionate, personalized care that promotes independence, dignity, and well-being in the comfort of their own homes."
               </p>
             </div>
@@ -149,8 +149,8 @@ const About = () => {
             </div>
             
             {/* Decorative elements */}
-            <div className="hidden md:block absolute -top-6 -right-6 w-24 h-24 bg-primary-100 rounded-full opacity-20 z-0"></div>
-            <div className="hidden md:block absolute -bottom-10 -left-10 w-32 h-32 bg-secondary-100 rounded-full opacity-30 z-0"></div>
+            <div className="hidden md:block absolute -top-6 -right-6 w-24 h-24 bg-neutral-300 rounded-full opacity-20 z-0"></div>
+            <div className="hidden md:block absolute -bottom-10 -left-10 w-32 h-32 bg-neutral-300 rounded-full opacity-30 z-0"></div>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ const TestimonialCard = ({ content, name, role, imageUrl }) => {
   return (
     <div className="card relative flex flex-col h-full shadow-lg hover:shadow-xl transition-all duration-300">
       {/* Quote icon */}
-      <div className="absolute top-6 right-6 w-12 h-12 text-primary-100">
+      <div className="absolute top-6 right-6 w-12 h-12 text-neutral-300">
         <svg
           fill="currentColor"
           viewBox="0 0 32 32"
@@ -17,7 +17,7 @@ const TestimonialCard = ({ content, name, role, imageUrl }) => {
 
       {/* Content */}
       <div className="flex-grow mb-6 min-h-[160px]">
-        <p className="text-neutral-600 italic leading-relaxed text-lg">{content}</p>
+        <p className="text-black leading-relaxed text-lg">{content}</p>
       </div>
 
       {/* Author info */}
@@ -34,13 +34,13 @@ const TestimonialCard = ({ content, name, role, imageUrl }) => {
             />
           </div>
         ) : (
-          <div className="w-16 h-16 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 mr-4 shadow-md flex-shrink-0">
+          <div className="w-16 h-16 rounded-full bg-neutral-200 flex items-center justify-center text-black mr-4 shadow-md flex-shrink-0">
             <span className="text-lg font-bold">{name.charAt(0)}</span>
           </div>
         )}
         <div>
-          <h4 className="font-semibold text-neutral-800 text-lg">{name}</h4>
-          {role && <p className="text-neutral-500">{role}</p>}
+          <h4 className="font-semibold text-black text-lg">{name}</h4>
+          {role && <p className="text-black">{role}</p>}
         </div>
       </div>
     </div>

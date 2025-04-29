@@ -84,11 +84,11 @@ const Testimonials = () => {
     <section id="testimonials" className="section bg-neutral-50">
       <div className="container-custom">
         <div className="text-center mb-10">
-          <div className="bg-primary-500 text-white px-4 py-2 inline-block rounded-tl-lg rounded-br-lg mb-4">
+          <div className="bg-blue-900 text-white px-4 py-2 inline-block rounded-tl-lg rounded-br-lg mb-4">
             <span className="font-semibold">Testimonials</span>
           </div>
-          <h2 className="heading-2 text-neutral-800 mb-4">What Our Clients Say</h2>
-          <p className="text-neutral-600 text-lg max-w-3xl mx-auto">
+          <h2 className="heading-2 text-black mb-4">What Our Clients Say</h2>
+          <p className="text-black text-lg max-w-3xl mx-auto">
             Don't just take our word for it. Hear from the families who have experienced the difference our caring team can make.
           </p>
         </div>
@@ -116,7 +116,7 @@ const Testimonials = () => {
                 setActiveIndex(prev => (prev === 0 ? testimonials.length - 1 : prev - 1));
                 setTimeout(() => setIsAnimating(false), 500);
               }}
-              className="w-12 h-12 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-600 hover:text-primary-500 hover:border-primary-500 transition-colors group"
+              className="w-12 h-12 rounded-full border border-neutral-200 flex items-center justify-center text-black hover:text-blue-900 hover:border-blue-900 transition-colors group"
               aria-label="Previous testimonials"
             >
               <svg
@@ -145,7 +145,7 @@ const Testimonials = () => {
                   }}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     activeIndex < 3 && index === 0 || activeIndex >= 3 && index === 1 
-                    ? 'bg-primary-500 w-8' 
+                    ? 'bg-blue-900 w-8' 
                     : 'bg-neutral-300 hover:bg-neutral-400'
                   }`}
                   aria-label={`Go to testimonial group ${index + 1}`}
@@ -159,7 +159,7 @@ const Testimonials = () => {
                 setActiveIndex(prev => (prev === testimonials.length - 1 ? 0 : prev + 1));
                 setTimeout(() => setIsAnimating(false), 500);
               }}
-              className="w-12 h-12 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-600 hover:text-primary-500 hover:border-primary-500 transition-colors group"
+              className="w-12 h-12 rounded-full border border-neutral-200 flex items-center justify-center text-black hover:text-blue-900 hover:border-blue-900 transition-colors group"
               aria-label="Next testimonials"
             >
               <svg
@@ -197,7 +197,7 @@ const Testimonials = () => {
                   setActiveIndex(prev => (prev === 0 ? testimonials.length - 1 : prev - 1));
                   setTimeout(() => setIsAnimating(false), 500);
                 }}
-                className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-neutral-600"
+                className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-black"
                 aria-label="Previous testimonial"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -211,7 +211,7 @@ const Testimonials = () => {
                     key={index}
                     onClick={() => handleDotClick(index)}
                     className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                      activeIndex === index ? 'bg-primary-500 w-6' : 'bg-neutral-300'
+                      activeIndex === index ? 'bg-blue-900 w-6' : 'bg-neutral-300'
                     }`}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />
@@ -224,7 +224,7 @@ const Testimonials = () => {
                   setActiveIndex(prev => (prev === testimonials.length - 1 ? 0 : prev + 1));
                   setTimeout(() => setIsAnimating(false), 500);
                 }}
-                className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-neutral-600"
+                className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-black"
                 aria-label="Next testimonial"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

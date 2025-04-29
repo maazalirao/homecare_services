@@ -106,8 +106,8 @@ const Services = () => {
     <section id="services" className="py-10 sm:py-14 md:py-16 bg-white">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
-          <span className="text-primary-500 font-semibold inline-block px-4 py-1 bg-primary-50 rounded-full mb-2">Our Services</span>
-          <h2 className="heading-2 text-neutral-800 mb-4">We Offer:</h2>
+          <span className="text-black font-semibold inline-block px-4 py-1 bg-neutral-200 rounded-full mb-2">Our Services</span>
+          <h2 className="heading-2 text-black mb-4">We Offer:</h2>
         </div>
 
         {/* Desktop services alternating layout */}
@@ -121,8 +121,8 @@ const Services = () => {
             >
               {/* Text content */}
               <div className="w-full md:w-1/2">
-                <h3 className="text-2xl md:text-3xl font-bold text-neutral-800 mb-4">{service.title}</h3>
-                <p className="text-neutral-600 text-lg mb-5">{service.description}</p>
+                <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">{service.title}</h3>
+                <p className="text-black text-lg mb-5">{service.description}</p>
                 
                 {/* Service details with bullet points */}
                 <div className="space-y-2 mb-6">
@@ -131,7 +131,7 @@ const Services = () => {
                 
                 <Link 
                   href={service.href}
-                  className="btn-primary inline-flex items-center"
+                  className="bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center inline-flex"
                 >
                   Apply for care
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -198,7 +198,7 @@ const Services = () => {
               <button
                 key={index}
                 className={`w-2.5 h-2.5 rounded-full ${
-                  index === 0 ? 'bg-primary-500' : 'bg-neutral-300'
+                  index === 0 ? 'bg-blue-900' : 'bg-neutral-300'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
