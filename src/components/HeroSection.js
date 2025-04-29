@@ -57,7 +57,7 @@ const StatCounter = ({ end, label, suffix = "+", delay = 0 }) => {
   }, [isVisible, end, delay]);
 
   return (
-    <div ref={counterRef} className="flex flex-col items-center">
+    <div ref={counterRef} className="flex flex-col items-center justify-center text-center w-full">
       <div className="text-4xl md:text-5xl font-bold text-neutral-800 mb-1">
         {count}{suffix}
       </div>
@@ -199,11 +199,11 @@ const HeroSection = () => {
           </div>
           
           {/* Stats on mobile */}
-          <div className="grid grid-cols-2 gap-8 w-full">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-8 w-full">
             <StatCounter end={25000} label="Happy clients" delay={300} />
             <StatCounter end={7} label="Languages" delay={800} />
             <StatCounter end={30} label="Years of experience" delay={1300} />
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center justify-center text-center w-full">
               <div className="text-4xl font-bold text-neutral-800 mb-1">24/7</div>
               <div className="text-lg font-medium text-neutral-600">Client support</div>
             </div>

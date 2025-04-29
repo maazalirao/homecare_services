@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,20 +24,16 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-[#0d2c4b]'} py-3`}>
       <div className="container-custom">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo Text */}
           <Link href="/" className="relative z-10">
-            <div className="relative w-44 h-10 md:w-48 md:h-12">
-              <Image 
-                src={isScrolled ? "/logo.svg" : "/logo-white.svg"} 
-                alt="Special Touch Home Care"
-                fill
-                priority
-                className="object-contain"
-              />
-            </div>
+            <h1 className={`font-bold text-xl md:text-2xl ${isScrolled ? 'text-[#0d2c4b]' : 'text-white'}`}>
+              <span className="text-[#58b4db]">Special</span> 
+              <span>Touch</span>
+              <span className="block text-sm font-medium ml-1">Home Care Services</span>
+            </h1>
           </Link>
 
           {/* Navigation - Desktop */}
@@ -102,16 +97,32 @@ const Navbar = () => {
             </Link>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button 
-            className="lg:hidden relative z-10 p-2" 
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            <div className={`w-6 h-0.5 mb-1.5 transition-all ${menuOpen ? 'rotate-45 translate-y-2 bg-[#0d2c4b]' : isScrolled ? 'bg-[#0d2c4b]' : 'bg-white'}`}></div>
-            <div className={`w-6 h-0.5 mb-1.5 transition-all ${menuOpen ? 'opacity-0 bg-[#0d2c4b]' : isScrolled ? 'bg-[#0d2c4b]' : 'bg-white'}`}></div>
-            <div className={`w-6 h-0.5 transition-all ${menuOpen ? '-rotate-45 -translate-y-2 bg-[#0d2c4b]' : isScrolled ? 'bg-[#0d2c4b]' : 'bg-white'}`}></div>
-          </button>
+          {/* Mobile Actions */}
+          <div className="flex items-center lg:hidden space-x-4">
+            {/* Phone Icon - Mobile */}
+            <a 
+              href="tel:+12125551234" 
+              className="relative z-10"
+              aria-label="Call us"
+            >
+              <span className={`flex items-center justify-center w-8 h-8 rounded-full ${isScrolled ? 'bg-[#0d2c4b] text-white' : 'bg-white text-[#0d2c4b]'}`}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </span>
+            </a>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="relative z-10 p-2" 
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+            >
+              <div className={`w-6 h-0.5 mb-1.5 transition-all ${menuOpen ? 'rotate-45 translate-y-2 bg-[#0d2c4b]' : isScrolled ? 'bg-[#0d2c4b]' : 'bg-white'}`}></div>
+              <div className={`w-6 h-0.5 mb-1.5 transition-all ${menuOpen ? 'opacity-0 bg-[#0d2c4b]' : isScrolled ? 'bg-[#0d2c4b]' : 'bg-white'}`}></div>
+              <div className={`w-6 h-0.5 transition-all ${menuOpen ? '-rotate-45 -translate-y-2 bg-[#0d2c4b]' : isScrolled ? 'bg-[#0d2c4b]' : 'bg-white'}`}></div>
+            </button>
+          </div>
         </div>
       </div>
 
