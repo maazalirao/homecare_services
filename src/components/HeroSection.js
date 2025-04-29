@@ -58,10 +58,10 @@ const StatCounter = ({ end, label, suffix = "+", delay = 0 }) => {
 
   return (
     <div ref={counterRef} className="flex flex-col items-center">
-      <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-1">
+      <div className="text-4xl md:text-5xl font-bold text-secondary-500 mb-1">
         {count}{suffix}
       </div>
-      <div className="text-lg text-neutral-700">{label}</div>
+      <div className="text-lg text-primary-500">{label}</div>
     </div>
   );
 };
@@ -87,7 +87,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-[600px] py-16 md:py-20 overflow-hidden bg-white">
+    <section className="min-h-[600px] py-16 md:py-20 overflow-hidden bg-neutral-50">
       <div className="container mx-auto px-4">
         {/* Desktop layout */}
         <div className="hidden md:flex justify-between items-center">
@@ -95,10 +95,10 @@ const HeroSection = () => {
           <div className="w-full md:w-1/3 pr-8">
             <div className="space-y-4">
               <div className={`transition-all duration-700 transform ${visible.topRated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                <span className="text-primary-500 font-medium">Top Rated</span>
+                <span className="text-secondary-500 font-medium">Top Rated</span>
               </div>
               
-              <h1 className="text-4xl lg:text-5xl font-bold text-neutral-800">
+              <h1 className="text-4xl lg:text-5xl font-bold text-primary-500">
                 <span className={`block transition-all duration-700 transform ${visible.specialized ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                   Specialized
                 </span>
@@ -108,10 +108,10 @@ const HeroSection = () => {
               </h1>
               
               <div className={`transition-all duration-700 transform ${visible.bestQuality ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                <span className="text-primary-600 font-medium">Best Quality</span>
+                <span className="text-accent-500 font-medium">Best Quality</span>
               </div>
               
-              <p className="text-neutral-600 mt-4">
+              <p className="text-neutral-900 mt-4">
                 New York's trusted home care agency, providing personalized and top-rated home care to families for over 30 years.
               </p>
               
@@ -140,7 +140,7 @@ const HeroSection = () => {
                 alt="Caregiver with elderly client"
                 fill
                 priority
-                className="object-cover rounded-2xl shadow-xl"
+                className="object-cover rounded-lg shadow-custom"
               />
             </div>
           </div>
@@ -152,8 +152,8 @@ const HeroSection = () => {
               <StatCounter end={7} label="Languages" delay={800} />
               <StatCounter end={30} label="Years of experience" delay={1300} />
               <div className="flex flex-col items-center">
-                <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-1">24/7</div>
-                <div className="text-lg text-neutral-700">Client support</div>
+                <div className="text-4xl md:text-5xl font-bold text-secondary-500 mb-1">24/7</div>
+                <div className="text-lg text-primary-500">Client support</div>
               </div>
             </div>
           </div>
@@ -168,17 +168,17 @@ const HeroSection = () => {
               alt="Caregiver with elderly client"
               fill
               priority
-              className="object-cover rounded-2xl shadow-xl"
+              className="object-cover rounded-lg shadow-custom"
             />
           </div>
           
           {/* Text content */}
           <div className="text-center mb-8">
             <div className={`transition-all duration-700 transform ${visible.topRated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <span className="text-primary-500 font-medium">Top Rated</span>
+              <span className="text-secondary-500 font-medium">Top Rated</span>
             </div>
             
-            <h1 className="text-3xl font-bold text-neutral-800 my-3">
+            <h1 className="text-3xl font-bold text-primary-500 my-3">
               <span className={`block transition-all duration-700 transform ${visible.specialized ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 Specialized
               </span>
@@ -186,10 +186,10 @@ const HeroSection = () => {
             </h1>
             
             <div className={`transition-all duration-700 transform ${visible.bestQuality ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <span className="text-primary-600 font-medium">Best Quality</span>
+              <span className="text-accent-500 font-medium">Best Quality</span>
             </div>
             
-            <p className="text-neutral-600 mt-4">
+            <p className="text-neutral-900 mt-4">
               New York's trusted home care agency, providing personalized and top-rated home care to families for over 30 years.
             </p>
           </div>
@@ -216,8 +216,8 @@ const HeroSection = () => {
             <StatCounter end={7} label="Languages" delay={800} />
             <StatCounter end={30} label="Years of experience" delay={1300} />
             <div className="flex flex-col items-center">
-              <div className="text-4xl font-bold text-primary-600 mb-1">24/7</div>
-              <div className="text-lg text-neutral-700">Client support</div>
+              <div className="text-4xl font-bold text-secondary-500 mb-1">24/7</div>
+              <div className="text-lg text-primary-500">Client support</div>
             </div>
           </div>
         </div>

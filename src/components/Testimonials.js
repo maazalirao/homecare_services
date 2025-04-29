@@ -83,10 +83,12 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="section bg-neutral-50">
       <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-primary-500 font-semibold inline-block mb-2 px-4 py-1 bg-primary-50 rounded-full">Testimonials</span>
-          <h2 className="heading-2 text-neutral-800 mb-6">What Our Clients Say</h2>
-          <p className="text-neutral-600 text-lg">
+        <div className="text-center mb-10">
+          <div className="bg-primary-500 text-white px-4 py-2 inline-block rounded-tl-lg rounded-br-lg mb-4">
+            <span className="font-semibold">Testimonials</span>
+          </div>
+          <h2 className="heading-2 text-neutral-800 mb-4">What Our Clients Say</h2>
+          <p className="text-neutral-600 text-lg max-w-3xl mx-auto">
             Don't just take our word for it. Hear from the families who have experienced the difference our caring team can make.
           </p>
         </div>

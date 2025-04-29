@@ -40,19 +40,19 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-10">
-          <Link href="/#about" className={`font-medium hover:text-primary-500 transition-colors ${isScrolled ? 'text-neutral-700' : 'text-white'}`}>
+          <Link href="/#about" className={`font-medium hover:text-secondary-500 transition-colors ${isScrolled ? 'text-neutral-900' : 'text-white'}`}>
             About Us
           </Link>
-          <Link href="/#services" className={`font-medium hover:text-primary-500 transition-colors ${isScrolled ? 'text-neutral-700' : 'text-white'}`}>
+          <Link href="/#services" className={`font-medium hover:text-secondary-500 transition-colors ${isScrolled ? 'text-neutral-900' : 'text-white'}`}>
             Services
           </Link>
-          <Link href="/#testimonials" className={`font-medium hover:text-primary-500 transition-colors ${isScrolled ? 'text-neutral-700' : 'text-white'}`}>
+          <Link href="/#testimonials" className={`font-medium hover:text-secondary-500 transition-colors ${isScrolled ? 'text-neutral-900' : 'text-white'}`}>
             Testimonials
           </Link>
-          <Link href="/#careers" className={`font-medium hover:text-primary-500 transition-colors ${isScrolled ? 'text-neutral-700' : 'text-white'}`}>
+          <Link href="/#careers" className={`font-medium hover:text-secondary-500 transition-colors ${isScrolled ? 'text-neutral-900' : 'text-white'}`}>
             Careers
           </Link>
-          <Link href="/#contact" className={`font-medium hover:text-primary-500 transition-colors ${isScrolled ? 'text-neutral-700' : 'text-white'}`}>
+          <Link href="/#contact" className={`font-medium hover:text-secondary-500 transition-colors ${isScrolled ? 'text-neutral-900' : 'text-white'}`}>
             Contact
           </Link>
         </nav>
@@ -63,7 +63,7 @@ const Navbar = () => {
             href="tel:+12125551234" 
             className={`flex items-center justify-center w-10 h-10 rounded-full ${
               isScrolled 
-                ? 'bg-primary-50 text-primary-500 hover:bg-primary-100' 
+                ? 'bg-secondary-50 text-secondary-500 hover:bg-secondary-100' 
                 : 'bg-white/20 text-white hover:bg-white/30'
             } transition-colors`}
           >
@@ -76,7 +76,7 @@ const Navbar = () => {
             className={`inline-flex items-center ${
               isScrolled 
                 ? 'btn-primary' 
-                : 'bg-white text-primary-600 hover:bg-primary-50 py-2.5 px-5 rounded-lg font-semibold transition-colors shadow-md'
+                : 'bg-white text-primary-500 hover:bg-neutral-50 py-2.5 px-5 rounded-lg font-semibold transition-colors shadow-md'
             }`}
           >
             Apply for Care
@@ -91,11 +91,11 @@ const Navbar = () => {
         >
           <span className="sr-only">Open main menu</span>
           {isMenuOpen ? (
-            <svg className="h-6 w-6 text-neutral-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="h-6 w-6 text-primary-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-            <svg className={`h-6 w-6 ${isScrolled ? 'text-neutral-900' : 'text-white'}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className={`h-6 w-6 ${isScrolled ? 'text-primary-500' : 'text-white'}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           )}
@@ -106,19 +106,19 @@ const Navbar = () => {
       <div className={`fixed inset-0 bg-white z-20 transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
         <div className="container-custom h-full flex flex-col pt-24 pb-12">
           <nav className="flex flex-col space-y-8 text-center">
-            <Link href="/#about" className="text-xl font-semibold text-neutral-800 hover:text-primary-500 transition-colors" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/#about" className="text-xl font-semibold text-primary-500 hover:text-secondary-500 transition-colors" onClick={() => setIsMenuOpen(false)}>
               About Us
             </Link>
-            <Link href="/#services" className="text-xl font-semibold text-neutral-800 hover:text-primary-500 transition-colors" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/#services" className="text-xl font-semibold text-primary-500 hover:text-secondary-500 transition-colors" onClick={() => setIsMenuOpen(false)}>
               Services
             </Link>
-            <Link href="/#testimonials" className="text-xl font-semibold text-neutral-800 hover:text-primary-500 transition-colors" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/#testimonials" className="text-xl font-semibold text-primary-500 hover:text-secondary-500 transition-colors" onClick={() => setIsMenuOpen(false)}>
               Testimonials
             </Link>
-            <Link href="/#careers" className="text-xl font-semibold text-neutral-800 hover:text-primary-500 transition-colors" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/#careers" className="text-xl font-semibold text-primary-500 hover:text-secondary-500 transition-colors" onClick={() => setIsMenuOpen(false)}>
               Careers
             </Link>
-            <Link href="/#contact" className="text-xl font-semibold text-neutral-800 hover:text-primary-500 transition-colors" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/#contact" className="text-xl font-semibold text-primary-500 hover:text-secondary-500 transition-colors" onClick={() => setIsMenuOpen(false)}>
               Contact
             </Link>
           </nav>

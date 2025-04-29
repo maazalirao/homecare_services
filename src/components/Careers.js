@@ -1,13 +1,16 @@
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 const JobCard = ({ title, type, location, description }) => {
   return (
-    <div className="card group hover:border-primary-300 h-full flex flex-col animate-fade-in">
+    <div className="bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-100 hover:border-primary-100 transition-all duration-300 h-full flex flex-col animate-fade-in p-6">
       <div className="flex justify-between items-start mb-4">
         <div>
           <h3 className="text-xl font-bold text-neutral-800 group-hover:text-primary-600 transition-colors">{title}</h3>
-          <div className="flex items-center mt-2 text-sm text-neutral-500">
+          <div className="flex flex-wrap items-center mt-2 text-sm text-neutral-500">
             <span>{type}</span>
             <span className="mx-2">•</span>
             <span>{location}</span>
@@ -36,6 +39,23 @@ const JobCard = ({ title, type, location, description }) => {
 };
 
 const Careers = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setIsVisible(true);
+      }
+    }, { threshold: 0.1 });
+
+    const section = document.getElementById('careers');
+    if (section) observer.observe(section);
+
+    return () => {
+      if (section) observer.unobserve(section);
+    };
+  }, []);
+
   const jobs = [
     {
       title: "Registered Nurse (RN)",
@@ -64,81 +84,96 @@ const Careers = () => {
   ];
 
   return (
-    <section id="careers" className="section bg-neutral-50">
+    <section id="careers" className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="order-2 lg:order-1">
-            <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
+        {/* Career headline with blue background */}
+        <div className="bg-primary-500 text-white px-4 py-3 md:py-4 inline-block rounded-tl-lg rounded-br-lg mb-8 md:mb-10">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">Special Touch Home Care careers</h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
+          <div className={`order-2 lg:order-1 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+            <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/images/careers.jpg"
+                src="/images/medium-shot-nurse-checking-man.jpg"
                 alt="Special Touch Home Care careers"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={90}
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-50"></div>
             </div>
           </div>
           
-          <div className="order-1 lg:order-2">
-            <h2 className="heading-2 text-neutral-800 mb-4">Join Our Team</h2>
+          <div className={`order-1 lg:order-2 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: "0.2s"}}>
+            <div className="bg-primary-500 text-white px-5 py-3 inline-block rounded-tl-lg rounded-br-lg mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold">Join Our Team</h2>
+            </div>
             <p className="text-neutral-600 text-lg leading-relaxed mb-8">
               At Special Touch Home Care Group, we're always looking for compassionate and dedicated professionals to join our team. When you work with us, you become part of a supportive community that values your contribution to our clients' well-being.
             </p>
             
             <div className="space-y-6">
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="flex items-start">
+                <div className="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-neutral-800">Competitive Pay</h3>
+                  <h3 className="text-lg font-semibold text-neutral-800 mb-1">Competitive Pay</h3>
                   <p className="text-neutral-600">Earn what you deserve with our competitive salary packages and bonuses.</p>
                 </div>
               </div>
               
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="flex items-start">
+                <div className="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-neutral-800">Flexible Scheduling</h3>
+                  <h3 className="text-lg font-semibold text-neutral-800 mb-1">Flexible Scheduling</h3>
                   <p className="text-neutral-600">We work with you to create a schedule that fits your life and commitments.</p>
                 </div>
               </div>
               
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="flex items-start">
+                <div className="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center text-primary-500 mr-4 flex-shrink-0">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-neutral-800">Career Growth</h3>
+                  <h3 className="text-lg font-semibold text-neutral-800 mb-1">Career Growth</h3>
                   <p className="text-neutral-600">Opportunities for advancement, continuing education, and professional development.</p>
                 </div>
               </div>
             </div>
             
-            <div className="mt-10">
-              <Link href="/careers" className="btn-primary">
+            <div className="mt-8">
+              <Link href="/careers" className="btn-primary inline-flex items-center justify-center px-6 py-3">
                 View All Openings
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
               </Link>
             </div>
           </div>
         </div>
         
-        <div className="mt-20">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="heading-2 text-neutral-800 mb-4">Current Openings</h2>
-            <p className="text-neutral-600 text-lg">
+        <div className={`mt-16 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: "0.4s"}}>
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <div className="bg-primary-500 text-white px-4 py-2 inline-block rounded-tl-lg rounded-br-lg mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold">Current Openings</h2>
+            </div>
+            <p className="text-neutral-600 text-lg px-4">
               Explore our available positions and find the perfect role where you can make a difference in people's lives every day.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {jobs.map((job, index) => (
               <JobCard
                 key={index}
