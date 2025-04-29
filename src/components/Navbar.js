@@ -114,13 +114,33 @@ const Navbar = () => {
 
             {/* Mobile Menu Button */}
             <button 
-              className="relative z-10 p-2" 
+              className="relative z-10 p-2 h-10 w-10 flex flex-col justify-center items-center" 
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >
-              <div className={`w-6 h-0.5 mb-1.5 transition-all ${menuOpen ? 'rotate-45 translate-y-2 bg-[#0d2c4b]' : isScrolled ? 'bg-[#0d2c4b]' : 'bg-white'}`}></div>
-              <div className={`w-6 h-0.5 mb-1.5 transition-all ${menuOpen ? 'opacity-0 bg-[#0d2c4b]' : isScrolled ? 'bg-[#0d2c4b]' : 'bg-white'}`}></div>
-              <div className={`w-6 h-0.5 transition-all ${menuOpen ? '-rotate-45 -translate-y-2 bg-[#0d2c4b]' : isScrolled ? 'bg-[#0d2c4b]' : 'bg-white'}`}></div>
+              <span className={`block w-6 h-0.5 absolute transition-all duration-300 ${
+                menuOpen 
+                  ? 'rotate-45 bg-[#0d2c4b]' 
+                  : isScrolled 
+                    ? 'bg-[#0d2c4b] -translate-y-1.5' 
+                    : 'bg-white -translate-y-1.5'
+              }`}></span>
+              
+              <span className={`block w-6 h-0.5 absolute transition-all duration-300 ${
+                menuOpen 
+                  ? 'opacity-0' 
+                  : isScrolled 
+                    ? 'bg-[#0d2c4b]' 
+                    : 'bg-white'
+              }`}></span>
+              
+              <span className={`block w-6 h-0.5 absolute transition-all duration-300 ${
+                menuOpen 
+                  ? '-rotate-45 bg-[#0d2c4b]' 
+                  : isScrolled 
+                    ? 'bg-[#0d2c4b] translate-y-1.5' 
+                    : 'bg-white translate-y-1.5'
+              }`}></span>
             </button>
           </div>
         </div>

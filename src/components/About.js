@@ -116,11 +116,33 @@ const About = () => {
               </div>
             </div>
             
-            <div className="bg-[#0d2c4b] p-8 rounded-2xl shadow-sm">
+            {/* Our Mission section - Desktop view */}
+            <div className="bg-[#0d2c4b] p-8 rounded-2xl shadow-sm hidden lg:block">
               <h3 className="text-xl font-bold text-white mb-4">Our Mission</h3>
               <p className="text-white italic text-lg">
                 "To enhance the quality of life for our clients through compassionate, personalized care that promotes independence, dignity, and well-being in the comfort of their own homes."
               </p>
+            </div>
+
+            {/* Our Mission section with image - Mobile view only */}
+            <div className="lg:hidden bg-[#0d2c4b] rounded-2xl shadow-sm overflow-hidden">
+              <div className="relative w-full h-48 sm:h-60">
+                <Image
+                  src="/images/about-4.jpg"
+                  alt="Special Touch homecare service"
+                  fill
+                  className="object-cover object-center"
+                  sizes="100vw"
+                  quality={90}
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0d2c4b]/90"></div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-4">Our Mission</h3>
+                <p className="text-white italic text-lg">
+                  "To enhance the quality of life for our clients through compassionate, personalized care that promotes independence, dignity, and well-being in the comfort of their own homes."
+                </p>
+              </div>
             </div>
           </div>
           
@@ -163,8 +185,8 @@ const About = () => {
                 />
               </div>
               
-              {/* Fourth image - right bottom */}
-              <div className="col-span-12 md:col-span-7 h-60 sm:h-72 md:h-80 relative overflow-hidden rounded-2xl shadow-lg mt-2">
+              {/* Fourth image - right bottom - Kept visible on desktop, hidden on mobile since moved to mission */}
+              <div className="col-span-12 md:col-span-7 h-60 sm:h-72 md:h-80 relative overflow-hidden rounded-2xl shadow-lg mt-2 hidden lg:block">
                 <Image
                   src="/images/about-4.jpg"
                   alt="Special Touch homecare service"
