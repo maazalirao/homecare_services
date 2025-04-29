@@ -87,13 +87,13 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-[600px] py-16 md:py-20 overflow-hidden bg-neutral-50">
-      <div className="container mx-auto px-4">
+    <section className="min-h-[600px] py-16 md:py-24 overflow-hidden bg-neutral-50">
+      <div className="container mx-auto px-4 md:px-8">
         {/* Desktop layout */}
         <div className="hidden md:flex justify-between items-center">
           {/* Left side - Text content */}
-          <div className="w-full md:w-1/3 pr-8">
-            <div className="space-y-4">
+          <div className="w-full md:w-1/3 px-4 md:px-6">
+            <div className="space-y-6">
               <div className={`transition-all duration-700 transform ${visible.topRated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 <span className="text-secondary-500 font-medium">Top Rated</span>
               </div>
@@ -116,7 +116,7 @@ const HeroSection = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <Link href="/#apply" className="btn-primary flex items-center justify-center">
+                <Link href="/apply" className="btn-primary flex items-center justify-center">
                   <span>Apply for care</span>
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -133,20 +133,27 @@ const HeroSection = () => {
           </div>
           
           {/* Center - Image */}
-          <div className="w-full md:w-1/3 flex justify-center">
-            <div className="relative w-full aspect-[3/4] max-w-md">
+          <div className="w-full md:w-1/3 flex justify-center items-center px-4">
+            <div className="relative w-full aspect-[3/4] max-w-md mx-auto 
+                transform transition-all duration-700 hover:scale-[1.02] 
+                before:absolute before:inset-0 before:bg-gradient-to-t before:from-primary-500/20 before:to-transparent before:opacity-70 before:rounded-lg before:z-[1] 
+                after:absolute after:inset-0 after:rounded-lg after:shadow-[0_0_20px_rgba(0,0,0,0.2)]">
               <Image
-                src="/images/hero-bg.jpg"
-                alt="Caregiver with elderly client"
+                src="/images/doctor-talking-with-her-elder-patient.jpg"
+                alt="Doctor talking with elderly patient in wheelchair"
                 fill
                 priority
-                className="object-cover rounded-lg shadow-custom"
+                quality={95}
+                className="object-cover rounded-lg shadow-xl z-0 animate-fadeIn"
+                sizes="(max-width: 768px) 100vw, 33vw"
+                style={{ objectPosition: 'center 20%' }}
               />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary-700/10 via-transparent to-secondary-500/10 rounded-lg z-[2] mix-blend-overlay" />
             </div>
           </div>
           
           {/* Right side - Stats */}
-          <div className="w-full md:w-1/3 pl-8">
+          <div className="w-full md:w-1/3 px-4 md:px-6">
             <div className="grid grid-cols-1 gap-y-10">
               <StatCounter end={25000} label="Happy clients" delay={300} />
               <StatCounter end={7} label="Languages" delay={800} />
@@ -160,16 +167,23 @@ const HeroSection = () => {
         </div>
         
         {/* Mobile layout */}
-        <div className="md:hidden flex flex-col items-center">
+        <div className="md:hidden flex flex-col items-center px-4">
           {/* Image first on mobile */}
-          <div className="relative w-full aspect-square max-w-xs mb-8">
+          <div className="relative w-full aspect-square max-w-xs mb-8 mx-auto
+              transform transition-all duration-700 
+              before:absolute before:inset-0 before:bg-gradient-to-t before:from-primary-500/20 before:to-transparent before:opacity-70 before:rounded-lg before:z-[1]
+              after:absolute after:inset-0 after:rounded-lg after:shadow-[0_0_20px_rgba(0,0,0,0.2)]">
             <Image
-              src="/images/hero-bg.jpg"
-              alt="Caregiver with elderly client"
+              src="/images/doctor-talking-with-her-elder-patient.jpg"
+              alt="Doctor talking with elderly patient in wheelchair"
               fill
               priority
-              className="object-cover rounded-lg shadow-custom"
+              quality={95}
+              className="object-cover rounded-lg shadow-xl z-0 animate-fadeIn"
+              sizes="(max-width: 768px) 100vw"
+              style={{ objectPosition: 'center 20%' }}
             />
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary-700/10 via-transparent to-secondary-500/10 rounded-lg z-[2] mix-blend-overlay" />
           </div>
           
           {/* Text content */}
@@ -196,7 +210,7 @@ const HeroSection = () => {
           
           {/* Buttons */}
           <div className="flex flex-col w-full gap-4 mb-10">
-            <Link href="/#apply" className="btn-primary flex items-center justify-center">
+            <Link href="/apply" className="btn-primary flex items-center justify-center">
               <span>Apply for care</span>
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>

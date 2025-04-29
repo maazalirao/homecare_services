@@ -72,7 +72,7 @@ const Navbar = () => {
             </svg>
           </Link>
           <Link 
-            href="/#apply" 
+            href="/apply" 
             className={`inline-flex items-center ${
               isScrolled 
                 ? 'btn-primary' 
@@ -129,7 +129,7 @@ const Navbar = () => {
               </svg>
               Call Us
             </Link>
-            <Link href="/#apply" className="btn-primary flex items-center justify-center" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/apply" className="btn-primary flex items-center justify-center" onClick={() => setIsMenuOpen(false)}>
               Apply for Care
             </Link>
           </div>
