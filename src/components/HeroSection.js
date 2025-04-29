@@ -58,27 +58,23 @@ const StatCounter = ({ end, label, suffix = "+", delay = 0 }) => {
 
   return (
     <div ref={counterRef} className="flex flex-col items-center">
-      <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent mb-1">
+      <div className="text-4xl md:text-5xl font-bold text-neutral-800 mb-1">
         {count}{suffix}
       </div>
-      <div className="text-lg font-medium text-blue-800">{label}</div>
+      <div className="text-lg font-medium text-neutral-600">{label}</div>
     </div>
   );
 };
 
 const HeroSection = () => {
   const [visible, setVisible] = useState({
-    topRated: false,
-    specialized: false,
     bestQuality: false
   });
 
   useEffect(() => {
     // Staggered animations for text elements
     const timeouts = [
-      setTimeout(() => setVisible(prev => ({ ...prev, topRated: true })), 300),
-      setTimeout(() => setVisible(prev => ({ ...prev, specialized: true })), 1300),
-      setTimeout(() => setVisible(prev => ({ ...prev, bestQuality: true })), 2300)
+      setTimeout(() => setVisible(prev => ({ ...prev, bestQuality: true })), 300)
     ];
 
     return () => {
@@ -93,36 +89,25 @@ const HeroSection = () => {
         <div className="hidden md:flex justify-between items-center">
           {/* Left side - Text content */}
           <div className="w-full md:w-1/3 px-4 md:px-6">
-            <div className="space-y-6">
-              <div className={`transition-all duration-700 transform ${visible.topRated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                <span className="text-blue-700 font-medium">Top Rated</span>
-              </div>
-              
-              <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent">
-                <span className={`block transition-all duration-700 transform ${visible.specialized ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                  Specialized
+            <div className="space-y-6">              
+              <h1 className="text-4xl lg:text-5xl font-bold">
+                <span className="block text-[#58b4db]">
+                  Best Quality
                 </span>
-                <span className="block"> Home Care,</span>
-                <span className="block"> Multilingual</span>
-                <span className="block"> Expertise</span>
+                <span className="block text-[#0d2c4b]"> Home</span>
+                <span className="block text-[#0d2c4b]"> Care, Multilingual</span>
+                <span className="block text-[#0d2c4b]"> Expertise</span>
               </h1>
               
-              <div className={`transition-all duration-700 transform ${visible.bestQuality ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                <span className="text-blue-700 font-medium">Best Quality</span>
-              </div>
-              
-              <p className="text-neutral-900 mt-4">
+              <p className="text-neutral-700 mt-4">
                 New York's trusted home care agency, providing personalized and top-rated home care to families for over 30 years.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <Link href="/apply" className="bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center">
+                <Link href="/apply" className="bg-[#0d2c4b] hover:bg-[#194168] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center">
                   <span>Apply for care</span>
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                  </svg>
                 </Link>
-                <Link href="/careers" className="bg-gradient-to-r from-blue-800 to-blue-600 hover:from-blue-700 hover:to-blue-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center">
+                <Link href="/careers" className="bg-white border-2 border-[#0d2c4b] text-[#0d2c4b] hover:bg-gray-50 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center">
                   <span>Join our team</span>
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -136,7 +121,7 @@ const HeroSection = () => {
           <div className="w-full md:w-1/3 flex justify-center items-center px-4">
             <div className="relative w-full aspect-[3/4] max-w-md mx-auto 
                 transform transition-all duration-700 hover:scale-[1.02] 
-                before:absolute before:inset-0 before:bg-gradient-to-t before:from-blue-900/20 before:to-transparent before:opacity-70 before:rounded-lg before:z-[1] 
+                before:absolute before:inset-0 before:bg-gradient-to-t before:from-[#0d2c4b]/20 before:to-transparent before:opacity-70 before:rounded-lg before:z-[1] 
                 after:absolute after:inset-0 after:rounded-lg after:shadow-[0_0_20px_rgba(0,0,0,0.2)]">
               <Image
                 src="/images/doctor-talking-with-her-elder-patient.jpg"
@@ -148,7 +133,7 @@ const HeroSection = () => {
                 sizes="(max-width: 768px) 100vw, 33vw"
                 style={{ objectPosition: 'center 20%' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 via-transparent to-blue-700/10 rounded-lg z-[2] mix-blend-overlay" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#0d2c4b]/10 via-transparent to-[#58b4db]/10 rounded-lg z-[2] mix-blend-overlay" />
             </div>
           </div>
           
@@ -159,8 +144,8 @@ const HeroSection = () => {
               <StatCounter end={7} label="Languages" delay={800} />
               <StatCounter end={30} label="Years of experience" delay={1300} />
               <div className="flex flex-col items-center">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent mb-1">24/7</div>
-                <div className="text-lg font-medium text-blue-800">Client support</div>
+                <div className="text-4xl md:text-5xl font-bold text-neutral-800 mb-1">24/7</div>
+                <div className="text-lg font-medium text-neutral-600">Client support</div>
               </div>
             </div>
           </div>
@@ -171,7 +156,7 @@ const HeroSection = () => {
           {/* Image first on mobile */}
           <div className="relative w-full aspect-square max-w-xs mb-8 mx-auto
               transform transition-all duration-700 
-              before:absolute before:inset-0 before:bg-gradient-to-t before:from-blue-900/20 before:to-transparent before:opacity-70 before:rounded-lg before:z-[1]
+              before:absolute before:inset-0 before:bg-gradient-to-t before:from-[#0d2c4b]/20 before:to-transparent before:opacity-70 before:rounded-lg before:z-[1]
               after:absolute after:inset-0 after:rounded-lg after:shadow-[0_0_20px_rgba(0,0,0,0.2)]">
             <Image
               src="/images/doctor-talking-with-her-elder-patient.jpg"
@@ -183,40 +168,29 @@ const HeroSection = () => {
               sizes="(max-width: 768px) 100vw"
               style={{ objectPosition: 'center 20%' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 via-transparent to-blue-700/10 rounded-lg z-[2] mix-blend-overlay" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#0d2c4b]/10 via-transparent to-[#58b4db]/10 rounded-lg z-[2] mix-blend-overlay" />
           </div>
           
           {/* Text content */}
           <div className="text-center mb-8">
-            <div className={`transition-all duration-700 transform ${visible.topRated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <span className="text-blue-700 font-medium">Top Rated</span>
-            </div>
-            
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent my-3">
-              <span className={`block transition-all duration-700 transform ${visible.specialized ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                Specialized
+            <h1 className="text-3xl font-bold my-3">
+              <span className="block text-[#58b4db]">
+                Best Quality
               </span>
-              <span className="block">Home Care, Multilingual Expertise</span>
+              <span className="block text-[#0d2c4b]">Home Care, Multilingual Expertise</span>
             </h1>
             
-            <div className={`transition-all duration-700 transform ${visible.bestQuality ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <span className="text-blue-700 font-medium">Best Quality</span>
-            </div>
-            
-            <p className="text-neutral-900 mt-4">
+            <p className="text-neutral-700 mt-4">
               New York's trusted home care agency, providing personalized and top-rated home care to families for over 30 years.
             </p>
           </div>
           
           {/* Buttons */}
           <div className="flex flex-col w-full gap-4 mb-10">
-            <Link href="/apply" className="bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center">
+            <Link href="/apply" className="bg-[#0d2c4b] hover:bg-[#194168] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center">
               <span>Apply for care</span>
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
             </Link>
-            <Link href="/careers" className="bg-gradient-to-r from-blue-800 to-blue-600 hover:from-blue-700 hover:to-blue-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center">
+            <Link href="/careers" className="bg-white border-2 border-[#0d2c4b] text-[#0d2c4b] hover:bg-gray-50 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center">
               <span>Join our team</span>
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -230,8 +204,8 @@ const HeroSection = () => {
             <StatCounter end={7} label="Languages" delay={800} />
             <StatCounter end={30} label="Years of experience" delay={1300} />
             <div className="flex flex-col items-center">
-              <div className="text-4xl font-bold bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent mb-1">24/7</div>
-              <div className="text-lg font-medium text-blue-800">Client support</div>
+              <div className="text-4xl font-bold text-neutral-800 mb-1">24/7</div>
+              <div className="text-lg font-medium text-neutral-600">Client support</div>
             </div>
           </div>
         </div>

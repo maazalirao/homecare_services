@@ -31,15 +31,15 @@ body {
   }
   
   .btn-primary {
-    @apply bg-gradient-to-r from-neutral-800 to-neutral-900 hover:from-black hover:to-neutral-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1;
+    @apply bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1;
   }
   
   .btn-secondary {
-    @apply bg-gradient-to-r from-neutral-700 to-neutral-800 hover:from-neutral-800 hover:to-neutral-900 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1;
+    @apply bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1;
   }
 
   .btn-outline {
-    @apply border-2 border-neutral-800 text-black font-semibold py-3 px-6 rounded-lg hover:bg-neutral-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md;
+    @apply border-2 border-blue-900 text-blue-900 font-semibold py-3 px-6 rounded-lg hover:bg-blue-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md;
   }
 
   .card {

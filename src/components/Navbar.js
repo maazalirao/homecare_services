@@ -5,135 +5,184 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
     };
+    
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <header 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white shadow-custom py-2' 
-          : 'bg-transparent py-6'
-      }`}
-    >
-      <div className="container-custom flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center relative z-30">
-          <div className="relative w-52 h-14">
-            <Image 
-              src={isScrolled || isMenuOpen ? "/logo.svg" : "/logo-white.svg"}
-              alt="Special Touch Home Care Group" 
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-        </Link>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
+      <div className="container-custom">
+        <div className="flex justify-between items-center">
+          {/* Logo */}
+          <Link href="/" className="relative z-10">
+            <div className="relative w-44 h-10 md:w-48 md:h-12">
+              <Image 
+                src={isScrolled ? "/logo.svg" : "/logo-white.svg"} 
+                alt="Special Touch Home Care"
+                fill
+                priority
+                className="object-contain"
+              />
+            </div>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-10">
-          <Link href="/#about" className={`font-medium hover:text-secondary-500 transition-colors ${isScrolled ? 'text-neutral-900' : 'text-white'}`}>
-            About Us
-          </Link>
-          <Link href="/#services" className={`font-medium hover:text-secondary-500 transition-colors ${isScrolled ? 'text-neutral-900' : 'text-white'}`}>
-            Services
-          </Link>
-          <Link href="/#testimonials" className={`font-medium hover:text-secondary-500 transition-colors ${isScrolled ? 'text-neutral-900' : 'text-white'}`}>
-            Testimonials
-          </Link>
-          <Link href="/#careers" className={`font-medium hover:text-secondary-500 transition-colors ${isScrolled ? 'text-neutral-900' : 'text-white'}`}>
-            Careers
-          </Link>
-          <Link href="/#contact" className={`font-medium hover:text-secondary-500 transition-colors ${isScrolled ? 'text-neutral-900' : 'text-white'}`}>
-            Contact
-          </Link>
-        </nav>
+          {/* Navigation - Desktop */}
+          <nav className="hidden lg:flex items-center space-x-8">
+            <Link 
+              href="/#about" 
+              className={`font-medium transition-colors ${isScrolled ? 'text-[#0d2c4b] hover:text-[#58b4db]' : 'text-white hover:text-white/80'}`}
+            >
+              About Us
+            </Link>
+            <Link 
+              href="/#services" 
+              className={`font-medium transition-colors ${isScrolled ? 'text-[#0d2c4b] hover:text-[#58b4db]' : 'text-white hover:text-white/80'}`}
+            >
+              Services
+            </Link>
+            <Link 
+              href="/#testimonials" 
+              className={`font-medium transition-colors ${isScrolled ? 'text-[#0d2c4b] hover:text-[#58b4db]' : 'text-white hover:text-white/80'}`}
+            >
+              Testimonials
+            </Link>
+            <Link 
+              href="/#careers" 
+              className={`font-medium transition-colors ${isScrolled ? 'text-[#0d2c4b] hover:text-[#58b4db]' : 'text-white hover:text-white/80'}`}
+            >
+              Careers
+            </Link>
+            <Link 
+              href="/#contact" 
+              className={`font-medium transition-colors ${isScrolled ? 'text-[#0d2c4b] hover:text-[#58b4db]' : 'text-white hover:text-white/80'}`}
+            >
+              Contact
+            </Link>
+            
+            {/* Call Button */}
+            <a 
+              href="tel:+12125551234" 
+              className="flex items-center font-medium transition-colors"
+            >
+              <span className={`flex items-center justify-center w-8 h-8 rounded-full mr-2 ${isScrolled ? 'bg-[#0d2c4b] text-white' : 'bg-white text-[#0d2c4b]'}`}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </span>
+              <span className={isScrolled ? 'text-[#0d2c4b]' : 'text-white'}>
+                (212) 555-1234
+              </span>
+            </a>
+            
+            {/* Apply Button */}
+            <Link 
+              href="/apply" 
+              className={`px-5 py-2 rounded-md font-medium transition-all ${
+                isScrolled 
+                  ? 'bg-[#0d2c4b] text-white hover:bg-[#194168]' 
+                  : 'bg-white text-[#0d2c4b] hover:bg-white/90'
+              }`}
+            >
+              Apply Now
+            </Link>
+          </nav>
 
-        {/* Call & Apply Buttons */}
-        <div className="hidden md:flex items-center space-x-5">
-          <Link 
-            href="tel:+12125551234" 
-            className={`flex items-center justify-center w-10 h-10 rounded-full ${
-              isScrolled 
-                ? 'bg-secondary-50 text-secondary-500 hover:bg-secondary-100' 
-                : 'bg-white/20 text-white hover:bg-white/30'
-            } transition-colors`}
+          {/* Mobile Menu Button */}
+          <button 
+            className="lg:hidden relative z-10 p-2" 
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-          </Link>
-          <Link 
-            href="/apply" 
-            className={`inline-flex items-center ${
-              isScrolled 
-                ? 'btn-primary' 
-                : 'bg-white text-primary-500 hover:bg-neutral-50 py-2.5 px-5 rounded-lg font-semibold transition-colors shadow-md'
-            }`}
-          >
-            Apply for Care
-          </Link>
+            <div className={`w-6 h-0.5 mb-1.5 transition-all ${menuOpen ? 'rotate-45 translate-y-2 bg-[#0d2c4b]' : isScrolled ? 'bg-[#0d2c4b]' : 'bg-white'}`}></div>
+            <div className={`w-6 h-0.5 mb-1.5 transition-all ${menuOpen ? 'opacity-0 bg-[#0d2c4b]' : isScrolled ? 'bg-[#0d2c4b]' : 'bg-white'}`}></div>
+            <div className={`w-6 h-0.5 transition-all ${menuOpen ? '-rotate-45 -translate-y-2 bg-[#0d2c4b]' : isScrolled ? 'bg-[#0d2c4b]' : 'bg-white'}`}></div>
+          </button>
         </div>
-
-        {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden flex items-center relative z-30" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span className="sr-only">Open main menu</span>
-          {isMenuOpen ? (
-            <svg className="h-6 w-6 text-primary-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className={`h-6 w-6 ${isScrolled ? 'text-primary-500' : 'text-white'}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
       </div>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-0 bg-white z-20 transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
-        <div className="container-custom h-full flex flex-col pt-24 pb-12">
-          <nav className="flex flex-col space-y-8 text-center">
-            <Link href="/#about" className="text-xl font-semibold text-primary-500 hover:text-secondary-500 transition-colors" onClick={() => setIsMenuOpen(false)}>
-              About Us
-            </Link>
-            <Link href="/#services" className="text-xl font-semibold text-primary-500 hover:text-secondary-500 transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Services
-            </Link>
-            <Link href="/#testimonials" className="text-xl font-semibold text-primary-500 hover:text-secondary-500 transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Testimonials
-            </Link>
-            <Link href="/#careers" className="text-xl font-semibold text-primary-500 hover:text-secondary-500 transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Careers
-            </Link>
-            <Link href="/#contact" className="text-xl font-semibold text-primary-500 hover:text-secondary-500 transition-colors" onClick={() => setIsMenuOpen(false)}>
-              Contact
-            </Link>
-          </nav>
-          <div className="mt-auto flex flex-col space-y-4">
-            <Link href="tel:+12125551234" className="btn-secondary flex items-center justify-center" onClick={() => setIsMenuOpen(false)}>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              Call Us
-            </Link>
-            <Link href="/apply" className="btn-primary flex items-center justify-center" onClick={() => setIsMenuOpen(false)}>
-              Apply for Care
+      <div 
+        className={`fixed inset-0 bg-white z-40 p-6 pt-24 lg:hidden transition-transform duration-300 ease-in-out ${
+          menuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <nav className="flex flex-col space-y-6">
+          <Link 
+            href="/#about" 
+            className="text-lg font-medium text-[#0d2c4b] hover:text-[#58b4db] transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            About Us
+          </Link>
+          <Link 
+            href="/#services" 
+            className="text-lg font-medium text-[#0d2c4b] hover:text-[#58b4db] transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            Services
+          </Link>
+          <Link 
+            href="/#testimonials" 
+            className="text-lg font-medium text-[#0d2c4b] hover:text-[#58b4db] transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            Testimonials
+          </Link>
+          <Link 
+            href="/#careers" 
+            className="text-lg font-medium text-[#0d2c4b] hover:text-[#58b4db] transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            Careers
+          </Link>
+          <Link 
+            href="/#contact" 
+            className="text-lg font-medium text-[#0d2c4b] hover:text-[#58b4db] transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            Contact
+          </Link>
+          
+          <div className="pt-4 border-t border-gray-100 flex flex-col space-y-4">
+            {/* Call Button */}
+            <a 
+              href="tel:+12125551234" 
+              className="flex items-center text-lg font-medium text-[#0d2c4b]"
+              onClick={() => setMenuOpen(false)}
+            >
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#0d2c4b] text-white mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </span>
+              (212) 555-1234
+            </a>
+            
+            {/* Apply Button */}
+            <Link 
+              href="/apply" 
+              className="w-full py-3 bg-[#0d2c4b] text-white text-center rounded-md font-medium hover:bg-[#194168] transition-colors"
+              onClick={() => setMenuOpen(false)}
+            >
+              Apply Now
             </Link>
           </div>
-        </div>
+        </nav>
       </div>
     </header>
   );

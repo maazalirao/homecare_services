@@ -15,22 +15,22 @@ const ServiceCard = ({ title, description, icon, href, imageUrl }) => {
               quality={85}
               className="object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0d2c4b]/50 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
         ) : (
-          <div className="w-16 h-16 rounded-full bg-neutral-200 flex items-center justify-center text-black mb-4">
+          <div className="w-16 h-16 rounded-full bg-[#58b4db]/20 flex items-center justify-center text-[#0d2c4b] mb-4">
             {icon}
           </div>
         )}
       </div>
       
       <div className="px-5 pb-5 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold text-black mb-2 group-hover:text-black transition-colors">{title}</h3>
-        <p className="text-black mb-4 flex-grow">{description}</p>
+        <h3 className="text-xl font-bold text-[#0d2c4b] mb-2 group-hover:text-[#0d2c4b] transition-colors">{title}</h3>
+        <p className="text-neutral-700 mb-4 flex-grow">{description}</p>
         
         <Link 
           href={href} 
-          className="inline-flex items-center text-blue-900 font-medium hover:text-blue-700 transition-colors mt-auto"
+          className="inline-flex items-center text-[#0d2c4b] font-medium hover:text-[#58b4db] transition-colors mt-auto"
         >
           Learn More
           <svg 

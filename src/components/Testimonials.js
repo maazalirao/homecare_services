@@ -15,37 +15,37 @@ const Testimonials = () => {
       content: "The caregivers from Special Touch have become like family to us. Their attention to my father's needs and their genuine compassion has made a world of difference in his quality of life and our peace of mind.",
       name: "Margaret H.",
       role: "Daughter of Client",
-      imageUrl: "/images/medium-shot-women-looking-each-other.jpg"
+      imageUrl: null
     },
     {
       content: "I cannot express enough how much Special Touch Home Care has helped my mother maintain her independence. Their staff is professional, reliable, and truly caring. I highly recommend their services to anyone in need.",
       name: "Robert W.",
       role: "Son of Client",
-      imageUrl: "/images/doctor-talking-with-her-elder-patient.jpg"
+      imageUrl: null
     },
     {
       content: "After my surgery, I needed assistance with daily activities. The caregiver assigned to me was not only professional but also became a wonderful companion. Their attentive care helped me recover faster than expected.",
       name: "Elizabeth T.",
       role: "Recovery Patient",
-      imageUrl: "/images/woman-old-age-home-with-wheelchair.jpg"
+      imageUrl: null
     },
     {
       content: "We've tried other home care services, but none compare to Special Touch. Their team takes the time to understand our unique needs and preferences, creating a care plan that truly works for our family situation.",
       name: "David L.",
       role: "Family Member",
-      imageUrl: "/images/senior-woman-talking-with-her-doctor.jpg"
+      imageUrl: null
     },
     {
       content: "The compassion and expertise shown by the Special Touch team has been invaluable. They've provided not just physical assistance but emotional support during a challenging time for our entire family.",
       name: "Sarah M.",
       role: "Daughter of Client",
-      imageUrl: "/images/doctor-taking-care-senior-woman-home.jpg"
+      imageUrl: null
     },
     {
       content: "I appreciate how flexible Special Touch has been with our changing schedule needs. Their reliable, consistent service gives us confidence that our loved one is in capable hands even when we can't be there.",
       name: "James K.",
       role: "Son of Client",
-      imageUrl: "/images/nurse-old-man-posing-while-looking-camera.jpg"
+      imageUrl: null
     }
   ];
 
@@ -84,11 +84,11 @@ const Testimonials = () => {
     <section id="testimonials" className="section bg-neutral-50">
       <div className="container-custom">
         <div className="text-center mb-10">
-          <div className="bg-blue-900 text-white px-4 py-2 inline-block rounded-tl-lg rounded-br-lg mb-4">
+          <div className="bg-[#0d2c4b] text-white px-4 py-2 inline-block rounded-tl-lg rounded-br-lg mb-4">
             <span className="font-semibold">Testimonials</span>
           </div>
-          <h2 className="heading-2 text-black mb-4">What Our Clients Say</h2>
-          <p className="text-black text-lg max-w-3xl mx-auto">
+          <h2 className="heading-2 text-[#0d2c4b] mb-4">What Our Clients Say</h2>
+          <p className="text-neutral-700 text-lg max-w-3xl mx-auto">
             Don't just take our word for it. Hear from the families who have experienced the difference our caring team can make.
           </p>
         </div>
@@ -116,7 +116,7 @@ const Testimonials = () => {
                 setActiveIndex(prev => (prev === 0 ? testimonials.length - 1 : prev - 1));
                 setTimeout(() => setIsAnimating(false), 500);
               }}
-              className="w-12 h-12 rounded-full border border-neutral-200 flex items-center justify-center text-black hover:text-blue-900 hover:border-blue-900 transition-colors group"
+              className="w-12 h-12 rounded-full border border-neutral-200 flex items-center justify-center text-[#0d2c4b] hover:text-[#58b4db] hover:border-[#58b4db] transition-colors group"
               aria-label="Previous testimonials"
             >
               <svg
@@ -145,7 +145,7 @@ const Testimonials = () => {
                   }}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     activeIndex < 3 && index === 0 || activeIndex >= 3 && index === 1 
-                    ? 'bg-blue-900 w-8' 
+                    ? 'bg-[#0d2c4b] w-8' 
                     : 'bg-neutral-300 hover:bg-neutral-400'
                   }`}
                   aria-label={`Go to testimonial group ${index + 1}`}
@@ -159,7 +159,7 @@ const Testimonials = () => {
                 setActiveIndex(prev => (prev === testimonials.length - 1 ? 0 : prev + 1));
                 setTimeout(() => setIsAnimating(false), 500);
               }}
-              className="w-12 h-12 rounded-full border border-neutral-200 flex items-center justify-center text-black hover:text-blue-900 hover:border-blue-900 transition-colors group"
+              className="w-12 h-12 rounded-full border border-neutral-200 flex items-center justify-center text-[#0d2c4b] hover:text-[#58b4db] hover:border-[#58b4db] transition-colors group"
               aria-label="Next testimonials"
             >
               <svg
@@ -197,7 +197,7 @@ const Testimonials = () => {
                   setActiveIndex(prev => (prev === 0 ? testimonials.length - 1 : prev - 1));
                   setTimeout(() => setIsAnimating(false), 500);
                 }}
-                className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-black"
+                className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#0d2c4b]"
                 aria-label="Previous testimonial"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -211,7 +211,7 @@ const Testimonials = () => {
                     key={index}
                     onClick={() => handleDotClick(index)}
                     className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                      activeIndex === index ? 'bg-blue-900 w-6' : 'bg-neutral-300'
+                      activeIndex === index ? 'bg-[#0d2c4b] w-6' : 'bg-neutral-300'
                     }`}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />
@@ -224,7 +224,7 @@ const Testimonials = () => {
                   setActiveIndex(prev => (prev === testimonials.length - 1 ? 0 : prev + 1));
                   setTimeout(() => setIsAnimating(false), 500);
                 }}
-                className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-black"
+                className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-[#0d2c4b]"
                 aria-label="Next testimonial"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
