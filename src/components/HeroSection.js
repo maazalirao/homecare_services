@@ -83,8 +83,8 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-[600px] pt-24 pb-16 md:py-24 overflow-hidden bg-white">
-      <div className="container mx-auto px-4 md:px-8">
+    <section className="min-h-[600px] md:py-24 overflow-hidden bg-white">
+      <div className="md:container mx-auto md:px-4 md:px-8">
         {/* Desktop layout */}
         <div className="hidden md:flex justify-between items-center">
           {/* Left side - Text content */}
@@ -152,45 +152,65 @@ const HeroSection = () => {
         </div>
         
         {/* Mobile layout */}
-        <div className="md:hidden flex flex-col items-center px-4">
-          {/* Image first on mobile */}
-          <div className="relative w-full aspect-[16/10] max-w-sm mb-8 mx-auto transform transition-all duration-700">
+        <div className="md:hidden flex flex-col items-center">
+          {/* The banner comes after the navigation/header */}
+          <div className="w-full bg-[#0d2c4b] text-white py-3 px-4 flex items-center justify-center">
+            <p className="text-center font-semibold text-sm">
+              NY's Largest & Highest Rated Home Care Agency
+            </p>
+            <span className="ml-2 text-yellow-300">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            </span>
+          </div>
+          
+          {/* Hero Image - taller than before */}
+          <div className="relative w-full h-72">
             <Image
               src="/images/nurse-old-man-posing-while-looking-camera.jpg"
-              alt="Nurse and elderly man posing while looking at camera"
+              alt="Special Touch Home Care professional with client"
               fill
               priority
-              quality={95}
-              className="object-contain z-0 animate-fadeIn"
-              sizes="(max-width: 768px) 100vw"
+              quality={100}
+              className="object-cover"
+              sizes="100vw"
             />
           </div>
           
-          {/* Text content */}
-          <div className="text-center mb-6">
-            <h1 className="text-3xl font-bold">
-              <span className="block text-[#58b4db]">
-                Best Quality
-              </span>
-              <span className="block text-[#0d2c4b]">Home Care, Multilingual Expertise</span>
+          {/* Text content - matches the reference image */}
+          <div className="w-full px-8 mt-8 mb-2">
+            <h1 className="text-4xl font-bold">
+              <span className="text-[#58b4db] block md:inline">Top Rated</span>
+              <span className="text-[#0d2c4b]"> Home Care, Multilingual Expertise</span>
             </h1>
+            
+            <p className="text-neutral-600 mt-4 text-lg mb-8">
+              New York's trusted home care agency, providing personalized and top-rated home care to families for over 30 years.
+            </p>
           </div>
           
-          {/* Buttons */}
-          <div className="flex flex-col w-full gap-4 mb-10">
-            <Link href="/apply" className="bg-[#0d2c4b] hover:bg-[#194168] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center">
-              <span>Apply for care</span>
+          {/* Buttons - full width with correct styling */}
+          <div className="flex flex-col w-full px-8 gap-6 mb-10">
+            <Link 
+              href="/apply" 
+              className="bg-[#0d2c4b] text-white font-semibold py-4 px-6 rounded-md transition-all duration-300 flex items-center justify-center text-center text-lg"
+            >
+              Apply for care
             </Link>
-            <Link href="/careers" className="bg-white border-2 border-[#0d2c4b] text-[#0d2c4b] hover:bg-gray-50 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center">
-              <span>Join our team</span>
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            <Link 
+              href="/careers" 
+              className="border-2 border-[#0d2c4b] text-[#0d2c4b] font-semibold py-4 px-6 rounded-md transition-all duration-300 flex items-center justify-center text-center text-lg"
+            >
+              Join our team
+              <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
               </svg>
             </Link>
           </div>
           
-          {/* Stats on mobile */}
-          <div className="grid grid-cols-2 gap-x-4 gap-y-8 w-full">
+          {/* Stats section - hidden to match reference design */}
+          <div className="hidden grid-cols-2 gap-x-4 gap-y-8 w-full px-6">
             <StatCounter end={25000} label="Happy clients" delay={300} />
             <StatCounter end={7} label="Languages" delay={800} />
             <StatCounter end={30} label="Years of experience" delay={1300} />
