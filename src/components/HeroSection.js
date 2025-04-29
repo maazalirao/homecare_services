@@ -129,7 +129,7 @@ const HeroSection = () => {
             
             {/* Center - Image */}
             <div className="w-full md:w-1/3 flex justify-center items-center px-4">
-              <div className="relative w-full aspect-[3/4] max-w-md mx-auto 
+              <div className="relative w-full aspect-square md:aspect-[4/5] lg:aspect-[3/4] max-w-lg mx-auto 
                   transform transition-all duration-700 hover:scale-[1.02] 
                   before:absolute before:inset-0 before:bg-gradient-to-t before:from-[#0d2c4b]/20 before:to-transparent before:opacity-70 before:rounded-lg before:z-[1] 
                   after:absolute after:inset-0 after:rounded-lg after:shadow-[0_0_20px_rgba(0,0,0,0.2)]">
@@ -140,7 +140,7 @@ const HeroSection = () => {
                   priority
                   quality={95}
                   className="object-cover rounded-lg shadow-xl z-0 animate-fadeIn"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   style={{ objectPosition: 'center' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#0d2c4b]/10 via-transparent to-[#58b4db]/10 rounded-lg z-[2] mix-blend-overlay" />
@@ -163,31 +163,35 @@ const HeroSection = () => {
           
           {/* Mobile layout */}
           <div className="md:hidden flex flex-col items-center">
-            {/* Full width image like in reference */}
-            <div className="relative w-full" style={{ height: 'calc(100vh - 140px)', maxHeight: '500px' }}>
+            {/* Full width image */}
+            <div className="relative w-screen -mx-4 h-[55vh] min-h-[380px] max-h-[500px]">
               <Image
                 src="/images/long-shot-nurse-helping-old-woman-with-her-coat.jpg"
                 alt="Nurse helping elderly woman with her coat"
                 fill
                 priority
                 quality={90}
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="100vw"
+                style={{ objectPosition: '50% 40%' }}
               />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(0,0,0,0.2)]"></div>
             </div>
             
-            {/* Text overlay at bottom of image */}
-            <div className="w-full mt-4 mb-6 px-4">
-              <h1 className="text-4xl sm:text-5xl font-bold">
-                <span className="text-[#58b4db] block text-4xl sm:text-5xl mb-2">Top Rated</span>
-                <span className="text-[#0d2c4b] block">Home</span>
-                <span className="text-[#0d2c4b] block">Care, Multilingual</span>
-                <span className="text-[#0d2c4b] block">Expertise</span>
-              </h1>
-              
-              <p className="text-neutral-600 mt-4 text-base mb-6">
-                New York's trusted home care agency, providing personalized and top-rated home care to families for over 30 years.
-              </p>
+            {/* Text content */}
+            <div className="w-full mt-5 mb-5 px-4">
+              <div className="text-left">
+                <h1 className="font-bold leading-tight">
+                  <span className="text-[#58b4db] block text-4xl mb-1">Top Rated</span>
+                  <span className="text-[#0d2c4b] block text-3xl">Home</span>
+                  <span className="text-[#0d2c4b] block text-3xl">Care, Multilingual</span>
+                  <span className="text-[#0d2c4b] block text-3xl">Expertise</span>
+                </h1>
+                
+                <p className="text-neutral-600 mt-4 text-base mb-6">
+                  New York's trusted home care agency, providing personalized and top-rated home care to families for over 30 years.
+                </p>
+              </div>
             </div>
             
             {/* Buttons */}
