@@ -110,10 +110,14 @@ const Careers = () => {
     <section id="careers" className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-neutral-50 to-white">
       <div className="container-custom">
         {/* Career headline with gradient background */}
-        <div className="relative mb-8 md:mb-10 inline-block">
+        <div className="relative mb-8 md:mb-10 inline-block max-w-full">
           <div className="absolute inset-0 bg-[#0d2c4b] rounded-tl-lg rounded-br-lg transform rotate-1 scale-105 opacity-20"></div>
-          <div className="bg-[#0d2c4b] text-white px-6 py-4 rounded-tl-lg rounded-br-lg shadow-md relative z-10">
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white">Special Touch Home Care careers</h2>
+          <div className="bg-[#0d2c4b] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-tl-lg rounded-br-lg shadow-md relative z-10">
+            <h2 className="text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-white whitespace-normal break-words">
+              <span className="inline sm:hidden">Special Touch</span>
+              <span className="inline sm:hidden block">Home Care careers</span>
+              <span className="hidden sm:inline">Special Touch Home Care careers</span>
+            </h2>
           </div>
         </div>
 

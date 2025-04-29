@@ -45,25 +45,28 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
-            <ul className="space-y-2">
-              <li><Link href="/#about" className="text-white hover:text-[#58b4db] transition-colors">About Us</Link></li>
-              <li><Link href="/#services" className="text-white hover:text-[#58b4db] transition-colors">Our Services</Link></li>
-              <li><Link href="/#testimonials" className="text-white hover:text-[#58b4db] transition-colors">Testimonials</Link></li>
-              <li><Link href="/#careers" className="text-white hover:text-[#58b4db] transition-colors">Join Our Team</Link></li>
-              <li><Link href="/privacy" className="text-white hover:text-[#58b4db] transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="text-white hover:text-[#58b4db] transition-colors">Terms of Service</Link></li>
+            <ul className="space-y-2.5">
+              <li><Link href="/#about" className="text-white hover:text-[#58b4db] transition-colors text-sm md:text-base block py-0.5">About Us</Link></li>
+              <li><Link href="/#services" className="text-white hover:text-[#58b4db] transition-colors text-sm md:text-base block py-0.5">Our Services</Link></li>
+              <li><Link href="/#testimonials" className="text-white hover:text-[#58b4db] transition-colors text-sm md:text-base block py-0.5">Testimonials</Link></li>
+              <li><Link href="/#careers" className="text-white hover:text-[#58b4db] transition-colors text-sm md:text-base block py-0.5 relative group">
+                Join Our Team
+                <span className="absolute w-0 h-0.5 bg-[#58b4db] bottom-0 left-0 transition-all duration-300 group-hover:w-full"></span>
+              </Link></li>
+              <li><Link href="/privacy" className="text-white hover:text-[#58b4db] transition-colors text-sm md:text-base block py-0.5">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="text-white hover:text-[#58b4db] transition-colors text-sm md:text-base block py-0.5">Terms of Service</Link></li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">Our Services</h3>
-            <ul className="space-y-2">
-              <li><Link href="/services/personal-care" className="text-white hover:text-[#58b4db] transition-colors">Personal Care</Link></li>
-              <li><Link href="/services/nursing" className="text-white hover:text-[#58b4db] transition-colors">Nursing Services</Link></li>
-              <li><Link href="/services/companion" className="text-white hover:text-[#58b4db] transition-colors">Companion Care</Link></li>
-              <li><Link href="/services/respite" className="text-white hover:text-[#58b4db] transition-colors">Respite Care</Link></li>
-              <li><Link href="/services/specialized" className="text-white hover:text-[#58b4db] transition-colors">Specialized Care</Link></li>
+            <ul className="space-y-2.5">
+              <li><Link href="/services/personal-care" className="text-white hover:text-[#58b4db] transition-colors text-sm md:text-base block py-0.5">Personal Care</Link></li>
+              <li><Link href="/services/nursing" className="text-white hover:text-[#58b4db] transition-colors text-sm md:text-base block py-0.5">Nursing Services</Link></li>
+              <li><Link href="/services/companion" className="text-white hover:text-[#58b4db] transition-colors text-sm md:text-base block py-0.5">Companion Care</Link></li>
+              <li><Link href="/services/respite" className="text-white hover:text-[#58b4db] transition-colors text-sm md:text-base block py-0.5">Respite Care</Link></li>
+              <li><Link href="/services/specialized" className="text-white hover:text-[#58b4db] transition-colors text-sm md:text-base block py-0.5">Specialized Care</Link></li>
             </ul>
           </div>
 
