@@ -23,6 +23,19 @@ const Navbar = () => {
     };
   }, []);
 
+  // Add effect for body scroll lock when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add('body-locked');
+    } else {
+      document.body.classList.remove('body-locked');
+    }
+    
+    return () => {
+      document.body.classList.remove('body-locked');
+    };
+  }, [menuOpen]);
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -165,12 +178,12 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div 
-        className={`fixed inset-0 bg-white z-40 transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`fixed inset-0 bg-white z-40 transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto overflow-x-hidden max-w-full ${
           menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
-        style={{ paddingTop: '5rem' }}
+        style={{ paddingTop: '5rem', width: '100%' }}
       >
-        <nav className="flex flex-col p-6 pt-8">
+        <nav className="flex flex-col p-6 pt-8 overflow-x-hidden max-w-full">
           <div className="border-l-4 border-blue-600 pl-4 py-2 mb-10">
             <h3 className="text-xl font-bold text-gray-900">Menu</h3>
             <p className="text-sm text-gray-600">Navigate our services</p>
