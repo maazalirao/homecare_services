@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${poppins.variable} font-sans antialiased bg-neutral-50 min-h-screen overflow-x-hidden`}
+        className={`${poppins.variable} font-sans antialiased bg-neutral-50 min-h-screen`}
       >
         {children}
       </body>

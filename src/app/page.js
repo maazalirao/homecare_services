@@ -10,7 +10,7 @@ import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-hidden">
       <Navbar />
       <div className="w-full bg-white text-[#0d2c4b] py-2.5 text-center mt-[72px] border-b">
         <p className="text-sm md:text-base font-medium whitespace-nowrap">
@@ -27,6 +27,6 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
