@@ -150,9 +150,9 @@ const HeroSection = () => {
             
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <Link href="/apply" className="flex items-center justify-center px-8 py-3.5 rounded-lg bg-blue-700 text-white font-medium hover:bg-blue-800 transition-colors duration-300 shadow-lg shadow-blue-700/30 transform hover:-translate-y-1 hover:shadow-blue-700/40">
-                <span>Request Care</span>
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <Link href="/#contact" className="flex items-center justify-center px-8 py-3.5 rounded-lg bg-blue-700 text-white font-medium hover:bg-blue-800 transition-colors duration-300 shadow-lg shadow-blue-700/30 transform hover:-translate-y-1 hover:shadow-blue-700/40">
+                <span>Apply Now</span>
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </Link>
@@ -245,4 +245,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection; 
+export default HeroSection;

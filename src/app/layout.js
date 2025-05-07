@@ -14,14 +14,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth overflow-x-hidden">
+    <html lang="en" className="scroll-smooth">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </head>
       <body
-        className={`${poppins.variable} font-sans antialiased bg-neutral-50 min-h-screen overflow-x-hidden w-full`}
+        className={`${poppins.variable} font-sans antialiased bg-neutral-50 min-h-screen w-full`}
       >
-        <div className="overflow-x-hidden w-full">
+        <div className="w-full">
           {children}
         </div>
       </body>

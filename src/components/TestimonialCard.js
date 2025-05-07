@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const TestimonialCard = ({ content, name, role, imageUrl }) => {
   return (
-    <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-100 transition-all duration-300 h-full flex flex-col relative overflow-hidden group transform hover:-translate-y-1">
+    <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-100 transition-all duration-300 h-full flex flex-col relative group transform hover:-translate-y-1">
       {/* Quote decoration */}
       <div className="absolute -top-4 -left-4 text-8xl text-blue-400/10 font-serif pointer-events-none">"</div>
       
@@ -14,7 +14,7 @@ const TestimonialCard = ({ content, name, role, imageUrl }) => {
       {/* Author */}
       <div className="flex items-center mt-4">
         {imageUrl ? (
-          <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-blue-100">
+          <div className="w-12 h-12 rounded-full mr-4 border-2 border-blue-100">
             <Image 
               src={imageUrl} 
               alt={name} 

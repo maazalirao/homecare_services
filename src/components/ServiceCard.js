@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 const ServiceCard = ({ title, description, icon, href, imageUrl }) => {
   return (
-    <div className="bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-100 hover:border-blue-100 transition-all duration-300 h-full flex flex-col transform hover:-translate-y-1 overflow-hidden group">
-      <div className="relative mb-4 overflow-hidden">
+    <div className="bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-100 hover:border-blue-100 transition-all duration-300 h-full flex flex-col transform hover:-translate-y-1 group">
+      <div className="relative mb-4">
         {imageUrl ? (
-          <div className="relative w-full h-48 md:h-56 overflow-hidden">
+          <div className="relative w-full h-48 md:h-56">
             <Image
               src={imageUrl}
               alt={title}

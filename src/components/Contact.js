@@ -63,17 +63,9 @@ const Contact = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="heading-2 text-[#0d2c4b] mb-4">Get in Touch</h2>
           <p className="text-neutral-700 text-lg">
-            Have questions about our services or need more information? Our team is here to help.
+            Have questions about our services or need more information? Ready to apply for care? Our team is here to help.
             Fill out the form below, and we'll get back to you as soon as possible.
           </p>
-          <div className="mt-8">
-            <Link href="/apply" className="bg-[#0d2c4b] hover:bg-[#194168] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 inline-flex items-center">
-              Apply for Care
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </Link>
-          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -266,14 +258,6 @@ const Contact = () => {
                   </div>
                 </li>
               </ul>
-              <div className="mt-8 pt-6 border-t border-neutral-200">
-                <Link href="/apply" className="flex items-center text-[#0d2c4b] font-medium hover:text-[#58b4db] transition-colors">
-                  <span>Apply for Care</span>
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                  </svg>
-                </Link>
-              </div>
             </div>
             
             {/* Map placeholder - in a real implementation, you'd use Google Maps or similar */}
@@ -297,4 +281,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

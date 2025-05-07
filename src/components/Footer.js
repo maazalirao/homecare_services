@@ -12,7 +12,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-gradient-to-b from-blue-950 to-blue-900 text-white relative w-full mb-0 bottom-0">
+    <footer className="bg-gradient-to-b from-blue-950 to-blue-900 text-white w-full mt-0 pt-0 pb-0">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-r from-blue-600/20 to-blue-400/10"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-700/5 rounded-full filter blur-3xl -mr-32 -mb-32"></div>

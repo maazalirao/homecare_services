@@ -112,9 +112,9 @@ const Navbar = () => {
               </span>
             </a>
             
-            {/* Apply Button */}
+            {/* Contact Button */}
             <Link 
-              href="/apply" 
+              href="/#contact" 
               className={`px-5 py-2.5 rounded-lg font-medium transition-all duration-300 ${
                 isScrolled 
                   ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-md shadow-blue-600/20 hover:shadow-lg hover:shadow-blue-600/20' 
@@ -272,13 +272,13 @@ const Navbar = () => {
               </div>
             </a>
             
-            {/* Apply Button */}
+            {/* Contact Button */}
             <Link 
-              href="/apply" 
+              href="/#contact" 
               className="w-full py-4 bg-blue-600 text-white text-center rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20"
               onClick={() => setMenuOpen(false)}
             >
-              Apply Now
+              Contact Us
             </Link>
           </div>
         </nav>
@@ -287,4 +287,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
