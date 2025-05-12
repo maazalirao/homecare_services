@@ -94,7 +94,7 @@ const Stats = () => {
               </svg>
             </div>
             <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary-500 mb-1 md:mb-2">
-              <CountUp end={1} suffix=" min" />
+              <CountUp end={5} suffix=" min" />
             </div>
             <p className="text-base md:text-lg font-medium text-primary-500 mb-1">Response Time</p>
             <p className="text-sm text-neutral-900">guaranteed service</p>
