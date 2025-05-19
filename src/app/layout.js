@@ -10,6 +10,11 @@ const poppins = Poppins({
 export const metadata = {
   title: "Special Touch Home Care Group | Compassionate Home Care in New York",
   description: "Special Touch Home Care Group provides personalized and compassionate home care services in New York City. Our professional caregivers are dedicated to enhancing quality of life with dignity and respect.",
+  icons: {
+    icon: [
+      { url: '/favicon.png' },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {

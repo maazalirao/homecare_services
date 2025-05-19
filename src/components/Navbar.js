@@ -46,19 +46,14 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="relative z-10 flex items-center">
-            <div className="relative h-10 w-10 mr-2">
-              <div className="absolute inset-0 bg-blue-400 rounded-lg rotate-6"></div>
-              <div className="absolute inset-0 bg-blue-500 rounded-lg -rotate-3 flex items-center justify-center text-white font-bold text-xl">
-                ST
-              </div>
-            </div>
-            <div>
-              <h1 className={`font-bold text-xl transition-colors duration-300 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
-                Special Touch <span className={isScrolled ? 'text-blue-600' : 'text-blue-300'}>Care</span>
-              </h1>
-              <span className={`text-xs font-medium block transition-colors duration-300 ${isScrolled ? 'text-gray-600' : 'text-blue-100'}`}>
-                Home Care Services
-              </span>
+            <div className="relative h-14 w-52">
+              <Image
+                src={isScrolled ? '/images/logo/logo-blue.svg' : '/images/logo/logo-white.svg'}
+                alt="Special Touch Home Care"
+                fill
+                className="object-contain object-left"
+                priority
+              />
             </div>
           </Link>
 

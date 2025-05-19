@@ -23,15 +23,14 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="space-y-5">
             <Link href="/" className="inline-block group">
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center shadow-lg mr-3 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-xl">ST</span>
-                </div>
-                <h1 className="font-bold text-xl md:text-2xl text-white">
-                  <span className="text-blue-300 group-hover:text-blue-200 transition-colors">Special</span> 
-                  <span className="group-hover:text-blue-100 transition-colors">Touch</span>
-                  <span className="block text-sm font-medium text-blue-100/80 group-hover:text-blue-100 transition-colors">Home Care Services</span>
-                </h1>
+              <div className="relative h-16 w-52">
+                <Image
+                  src="/images/logo/logo-white.svg"
+                  alt="Special Touch Home Care"
+                  fill
+                  className="object-contain object-left"
+                  priority
+                />
               </div>
             </Link>
             <p className="text-blue-100/90 text-sm leading-relaxed">
