@@ -115,7 +115,7 @@ const HeroSection = () => {
   }, [displayText, currentPhraseIndex, isDeleting, typingSpeed, phrases]);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-white to-blue-50 pt-16 pb-12 md:py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-gradient-to-br from-white to-blue-50 pt-4 pb-12 md:pt-8 md:pb-16 lg:pt-12 lg:pb-20">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
         <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-200 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
@@ -186,7 +186,15 @@ const HeroSection = () => {
               
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <span className="text-yellow-400">★★★★★</span>
-                <span>Highly Rated</span>
+                <span>4.9/5 Rating</span>
+              </div>
+              
+              {/* Emergency Contact */}
+              <div className="flex items-center gap-2 text-sm text-red-600 bg-red-50 px-3 py-1 rounded-full">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                </svg>
+                <span className="font-medium">24/7: (212) 555-CARE</span>
               </div>
             </div>
           </div>

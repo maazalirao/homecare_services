@@ -1,10 +1,23 @@
 import Image from 'next/image';
 
-const TestimonialCard = ({ content, name, role, imageUrl }) => {
+const TestimonialCard = ({ content, name, role, rating = 5, imageUrl }) => {
   return (
     <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-100 transition-all duration-300 h-full flex flex-col relative group transform hover:-translate-y-1">
       {/* Quote decoration */}
       <div className="absolute -top-4 -left-4 text-8xl text-blue-400/10 font-serif pointer-events-none">"</div>
+      
+      {/* Star Rating */}
+      <div className="flex text-yellow-400 mb-4 relative z-10">
+        {[...Array(5)].map((_, i) => (
+          <svg 
+            key={i} 
+            className={`w-5 h-5 ${i < rating ? 'fill-current' : 'fill-gray-200'}`} 
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        ))}
+      </div>
       
       {/* Content */}
       <p className="text-gray-700 relative z-10 mb-6 flex-grow">

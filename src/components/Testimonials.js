@@ -14,39 +14,45 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      content: "The caregivers from Special Touch have become like family to us. Their attention to my father's needs and their genuine compassion has made a world of difference in his quality of life and our peace of mind.",
+      content: "Special Touch caregivers became like family. Their genuine compassion made all the difference for my father's quality of life.",
       name: "Margaret H.",
       role: "Daughter of Client",
+      rating: 5,
       imageUrl: null
     },
     {
-      content: "I cannot express enough how much Special Touch Home Care has helped my mother maintain her independence. Their staff is professional, reliable, and truly caring. I highly recommend their services to anyone in need.",
+      content: "Professional, reliable, and truly caring staff. Helped my mother maintain her independence. Highly recommend.",
       name: "Robert W.",
       role: "Son of Client",
+      rating: 5,
       imageUrl: null
     },
     {
-      content: "After my surgery, I needed assistance with daily activities. The caregiver assigned to me was not only professional but also became a wonderful companion. Their attentive care helped me recover faster than expected.",
+      content: "After surgery, their caregiver was professional and became a wonderful companion. Helped me recover faster.",
       name: "Elizabeth T.",
       role: "Recovery Patient",
+      rating: 5,
       imageUrl: null
     },
     {
-      content: "We've tried other home care services, but none compare to Special Touch. Their team takes the time to understand our unique needs and preferences, creating a care plan that truly works for our family situation.",
+      content: "They understand our unique needs and create care plans that truly work for our family situation.",
       name: "David L.",
       role: "Family Member",
+      rating: 5,
       imageUrl: null
     },
     {
-      content: "The compassion and expertise shown by the Special Touch team has been invaluable. They've provided not just physical assistance but emotional support during a challenging time for our entire family.",
+      content: "Compassionate team provided both physical assistance and emotional support during a challenging time.",
       name: "Sarah M.",
       role: "Daughter of Client",
+      rating: 5,
       imageUrl: null
     },
     {
-      content: "I appreciate how flexible Special Touch has been with our changing schedule needs. Their reliable, consistent service gives us confidence that our loved one is in capable hands even when we can't be there.",
+      content: "Flexible with our changing schedules. Reliable service gives us confidence our loved one is in capable hands.",
       name: "James K.",
       role: "Son of Client",
+      rating: 5,
       imageUrl: null
     }
   ];
@@ -113,8 +119,33 @@ const Testimonials = () => {
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">What Our Clients Say</h2>
           <p className="text-blue-100 text-lg max-w-3xl mx-auto">
-            Don't just take our word for it. Hear from the families who have experienced the difference our caring team can make.
+            Real reviews from families who have experienced our caring, professional home care services.
           </p>
+          
+          {/* Trust indicators */}
+          <div className="flex items-center justify-center gap-8 mt-8">
+            <div className="flex items-center gap-3 bg-white/10 rounded-full px-4 py-2">
+              <div className="flex text-yellow-400">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                ))}
+              </div>
+              <span className="text-white font-semibold">4.9/5</span>
+              <span className="text-blue-200 text-sm">(200+ reviews)</span>
+            </div>
+            
+            <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
+              <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+              <span className="text-white text-sm font-medium">Google Reviews</span>
+            </div>
+          </div>
         </div>
 
         {/* Desktop Testimonials Grid */}
@@ -126,6 +157,7 @@ const Testimonials = () => {
                   content={testimonial.content}
                   name={testimonial.name}
                   role={testimonial.role}
+                  rating={testimonial.rating}
                   imageUrl={testimonial.imageUrl}
                 />
               </div>
@@ -209,6 +241,7 @@ const Testimonials = () => {
                 content={testimonials[activeIndex].content}
                 name={testimonials[activeIndex].name}
                 role={testimonials[activeIndex].role}
+                rating={testimonials[activeIndex].rating}
                 imageUrl={testimonials[activeIndex].imageUrl}
               />
             </div>
