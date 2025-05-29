@@ -29,9 +29,8 @@ const About = () => {
           <div className="inline-block px-4 py-1.5 bg-blue-100 rounded-full text-blue-700 font-semibold text-sm mb-4">About Special Touch</div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Bringing Compassionate Care to Your Home</h2>
           <p className="text-lg text-gray-700">
-            For over three decades, Special Touch Home Care has been delivering personalized, compassionate care 
-            services throughout New York. Our multilingual team and innovative approach ensure every client 
-            receives care that respects their unique needs, dignity, and independence.
+            30+ years of personalized home care throughout New York. 
+            Multilingual team delivering compassionate, dignified care.
           </p>
         </div>
 
@@ -59,14 +58,13 @@ const About = () => {
                 </div>
                 
                 <p className="text-gray-700 mb-5">
-                  Eli Feldman brings extensive experience and vision to Special Touch Home Care. 
-                  His innovative approach to healthcare delivery has established our organization 
-                  as a leader in personalized home care services.
+                  Eli brings extensive healthcare experience and innovative vision 
+                  to Special Touch Home Care leadership.
                 </p>
                 
                 <p className="text-gray-700">
-                  Under his guidance, we've expanded our services throughout New York while maintaining 
-                  our commitment to excellent care, cultural sensitivity, and client-centered support systems.
+                  Leading expansion across New York while maintaining excellence 
+                  in client-centered care.
                 </p>
               </div>
             </div>
@@ -83,7 +81,7 @@ const About = () => {
                   </svg>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Specialized Expertise</h3>
-                <p className="text-gray-700 flex-grow">Our caregivers are extensively trained in specialized care approaches, ensuring they can meet the unique needs of each client.</p>
+                <p className="text-gray-700 flex-grow">Trained caregivers specializing in diverse client needs.</p>
               </div>
               
               {/* Core value 2 */}
@@ -94,7 +92,7 @@ const About = () => {
                   </svg>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Cultural Sensitivity</h3>
-                <p className="text-gray-700 flex-grow">With multilingual staff and diverse cultural backgrounds, we ensure care that respects and adapts to different cultural preferences.</p>
+                <p className="text-gray-700 flex-grow">Multilingual staff respecting cultural preferences and values.</p>
               </div>
               
               {/* Core value 3 */}
@@ -105,7 +103,7 @@ const About = () => {
                   </svg>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Personalized Plans</h3>
-                <p className="text-gray-700 flex-grow">We develop customized care plans that address the specific health needs, preferences, and goals of each individual client.</p>
+                <p className="text-gray-700 flex-grow">Custom care plans tailored to individual client goals.</p>
               </div>
               
               {/* Core value 4 */}
@@ -116,7 +114,7 @@ const About = () => {
                   </svg>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Responsive Support</h3>
-                <p className="text-gray-700 flex-grow">Our 24/7 support system ensures clients and families always have access to assistance when they need it most.</p>
+                <p className="text-gray-700 flex-grow">24/7 support ensuring assistance when needed most.</p>
               </div>
             </div>
             
@@ -129,8 +127,8 @@ const About = () => {
               </div>
               <h3 className="text-xl font-bold mb-4 relative z-10">Our Mission</h3>
               <p className="text-lg italic font-medium relative z-10">
-                "To enhance the quality of life for our clients through compassionate, personalized care
-                that promotes independence, dignity, and well-being in the comfort of their own homes."
+                "Enhancing quality of life through compassionate, personalized care 
+                that promotes independence and dignity at home."
               </p>
             </div>
           </div>

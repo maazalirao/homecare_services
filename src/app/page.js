@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
       <div className="w-full bg-white text-[#0d2c4b] py-2.5 text-center mt-[72px] border-b">
         <p className="text-sm md:text-base font-medium whitespace-nowrap">
-          NY's Largest & Highest Rated Home Care Agency <span className="ml-1 text-yellow-500">✨</span>
+          NY's Top-Rated Home Care Agency <span className="ml-1 text-yellow-500">✨</span>
         </p>
       </div>
       <main className="flex-grow w-full">

@@ -63,8 +63,8 @@ const Contact = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="heading-2 text-[#0d2c4b] mb-4">Get in Touch</h2>
           <p className="text-neutral-700 text-lg">
-            Have questions about our services or need more information? Ready to apply for care? Our team is here to help.
-            Fill out the form below, and we'll get back to you as soon as possible.
+            Questions about our services? Ready to apply for care? 
+            Fill out the form and we'll get back to you soon.
           </p>
         </div>
 

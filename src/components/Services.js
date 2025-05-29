@@ -35,14 +35,14 @@ const Services = () => {
     {
       id: 1,
       title: "Personal Care & Support",
-      description: "Our caregivers support daily activities, prioritizing health, comfort, safety, and peace of mind for you or your loved one.",
+      description: "Daily care support prioritizing health, comfort, and safety for your loved one.",
       details: [
-        "Personal Care & Feeding",
-        "Bathing and personal hygiene, dressing and grooming, toileting, transferring and positioning, feeding assistance, special diet management.",
-        "Household Chores & Errands",
-        "Laundry, light housekeeping, meal preparation, shopping, and other household chores.",
+        "Personal Care",
+        "Bathing, dressing, grooming, feeding assistance, medication reminders.",
+        "Household Support", 
+        "Light housekeeping, meal prep, laundry, shopping, errands.",
         "Health Management",
-        "Medication reminders and management."
+        "Medication reminders and health monitoring."
       ],
       imageUrl: "/images/doctor-taking-care-senior-woman-home.jpg",
       href: "/services/personal-care",
@@ -55,14 +55,14 @@ const Services = () => {
     {
       id: 2,
       title: "Nursing & Therapy",
-      description: "With Special Touch, you or your loved one will always have the medical support you need at home.",
+      description: "Medical support and therapy services delivered at home.",
       details: [
-        "Physical Well-being",
-        "Gait and balance training, health evaluations and screenings, home safety assessments, respiratory care, wound care.",
-        "Health Management",
-        "Medication management, nutritional management, chronic condition monitoring.",
-        "Therapeutic Support",
-        "Therapy sessions, rehabilitation programs, specialized care plans."
+        "Physical Care",
+        "Health evaluations, wound care, respiratory care, mobility training.",
+        "Health Management", 
+        "Medication management, chronic condition monitoring, nutritional support.",
+        "Therapy Services",
+        "Rehabilitation programs and specialized care plans."
       ],
       imageUrl: "/images/doctor-talking-with-her-elder-patient.jpg",
       href: "/services/nursing",
@@ -75,7 +75,7 @@ const Services = () => {
     {
       id: 3,
       title: "Companionship",
-      description: "Friendly companionship, conversation, and emotional support for seniors living alone or feeling isolated.",
+      description: "Friendly companionship and emotional support for seniors.",
       imageUrl: "/images/medium-shot-women-looking-each-other.jpg",
       href: "/services/companion",
       icon: (
@@ -87,7 +87,7 @@ const Services = () => {
     {
       id: 4,
       title: "Live-In Care",
-      description: "24/7 care and support for those who need round-the-clock assistance in the comfort of their own home.",
+      description: "24/7 care and support in the comfort of your own home.",
       imageUrl: "/images/senior-woman-talking-with-her-doctor.jpg",
       href: "/services/live-in",
       icon: (
@@ -99,7 +99,7 @@ const Services = () => {
     {
       id: 5,
       title: "CDPAP",
-      description: "Consumer Directed Personal Assistance Program allowing loved ones to provide paid care.",
+      description: "Consumer Directed Program allowing family members to provide paid care.",
       imageUrl: "/images/happy-old-woman-nursing-home-sitting-couch-talking-with-her-caretaker-retired-woman-with-crutches.jpg",
       href: "/services/cdpap",
       icon: (
@@ -154,8 +154,8 @@ const Services = () => {
           <div className="inline-block px-4 py-1.5 bg-blue-100 rounded-full text-blue-700 font-semibold text-sm mb-4">Our Care Services</div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Comprehensive Home Care Solutions</h2>
           <p className="text-lg text-gray-700">
-            We offer a range of specialized services designed to meet the unique needs of each client,
-            providing compassionate care and support in the comfort of their own homes.
+            Specialized services designed to meet unique client needs with 
+            compassionate care and support at home.
           </p>
         </div>
 

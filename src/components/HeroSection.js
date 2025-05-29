@@ -144,8 +144,7 @@ const HeroSection = () => {
             </div>
             
             <p className="text-lg text-gray-700">
-              Special Touch provides compassionate home care with personalized service plans, 
-              multilingual caregivers, and over 30 years of dedicated experience throughout New York.
+              Expert home care with 30+ years experience. Multilingual caregivers across New York.
             </p>
             
             {/* CTA buttons */}

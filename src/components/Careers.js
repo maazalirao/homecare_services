@@ -84,25 +84,25 @@ const Careers = () => {
       title: "Registered Nurse (RN)",
       type: "Full-time",
       location: "New York City",
-      description: "Join our team as a Registered Nurse providing high-quality care to our clients in their homes. Requires valid RN license and 2+ years of experience."
+      description: "Provide high-quality care to clients in their homes. Requires valid RN license and 2+ years experience."
     },
     {
       title: "Home Health Aide (HHA)",
       type: "Full-time / Part-time",
       location: "New York City",
-      description: "Provide compassionate personal care and assistance with daily activities to help our clients maintain their independence and dignity at home."
+      description: "Provide compassionate personal care helping clients maintain independence and dignity at home."
     },
     {
       title: "Care Coordinator",
       type: "Full-time",
       location: "New York City",
-      description: "Oversee client care plans, coordinate services between caregivers and clients, and ensure all care needs are met with the highest quality standards."
+      description: "Oversee client care plans and coordinate services to ensure highest quality standards."
     },
     {
       title: "Physical Therapist",
       type: "Contract",
       location: "New York City",
-      description: "Work with clients to improve mobility, reduce pain, and increase strength through customized therapeutic exercise programs in their homes."
+      description: "Help clients improve mobility and strength through customized therapeutic programs at home."
     }
   ];
 
@@ -114,7 +114,7 @@ const Careers = () => {
           <div className="inline-block px-4 py-1.5 bg-blue-100 rounded-full text-blue-700 font-semibold text-sm mb-4">Career Opportunities</div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Join Our Exceptional Team</h2>
           <p className="text-lg text-gray-700">
-            Make a meaningful difference in people's lives every day by becoming part of our compassionate care team.
+            Make a meaningful difference in people's lives by joining our compassionate care team.
           </p>
         </div>
 
@@ -136,7 +136,8 @@ const Careers = () => {
           <div className={`order-1 lg:order-2 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Why Join Special Touch Home Care?</h3>
             <p className="text-gray-700 text-lg leading-relaxed mb-8">
-              At Special Touch Home Care Group, we're always looking for compassionate and dedicated professionals to join our team. When you work with us, you become part of a supportive community that values your contribution to our clients' well-being.
+              Join our supportive team of compassionate professionals making a difference in clients' lives. 
+              We value your contribution to exceptional home care.
             </p>
             
             <div className="space-y-6">
@@ -148,7 +149,7 @@ const Careers = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">Competitive Pay</h3>
-                  <p className="text-gray-700">Earn what you deserve with our competitive salary packages and bonuses.</p>
+                  <p className="text-gray-700">Competitive salary packages and performance bonuses.</p>
                 </div>
               </div>
               
@@ -160,7 +161,7 @@ const Careers = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">Flexible Scheduling</h3>
-                  <p className="text-gray-700">We work with you to create a schedule that fits your life and commitments.</p>
+                  <p className="text-gray-700">Flexible schedules that fit your life and commitments.</p>
                 </div>
               </div>
               
@@ -172,7 +173,7 @@ const Careers = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">Career Growth</h3>
-                  <p className="text-gray-700">Opportunities for advancement, continuing education, and professional development.</p>
+                  <p className="text-gray-700">Advancement opportunities and continuing education support.</p>
                 </div>
               </div>
             </div>
@@ -196,7 +197,7 @@ const Careers = () => {
           <div className="text-center mb-10">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Trusted by Many</h3>
             <p className="text-gray-700 max-w-3xl mx-auto">
-              Our track record of excellence has earned us the trust of healthcare professionals and clients throughout New York.
+              Our excellence has earned trust from healthcare professionals and clients across New York.
             </p>
           </div>
           
